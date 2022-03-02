@@ -1,0 +1,42 @@
+#BotonesInicioNavegacion{
+    margin-top: 20px;
+}
+.BotonInicioElementoEnLista{
+    background-color: rgb(9, 139, 226);
+    width: 100vw;
+    height: 50px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.BotonInicioElementoEnLista:hover{
+    cursor: pointer;
+    background-color: rgb(42, 164, 245);
+}
+.ContenedorImagenElementoEnLista{
+    background-color: rgb(42, 164, 245);
+    width: 30%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ContenedorImagenElementoEnLista img{
+    height: 80%;
+    /* border-radius: 50%; */
+}
+.ContenedorDescripcionElementoEnLista{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.ContenedorDescripcionElementoEnLista span{
+    margin-left: 10px;
+    color: white;
+    font-size: 20px;
+}
+@media screen and (min-width: 768px){
+    .ContenedorDescripcionElementoEnLista span{
+        font-size: 30px;
+    }
+}    

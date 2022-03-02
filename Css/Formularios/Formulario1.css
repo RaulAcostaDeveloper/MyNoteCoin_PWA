@@ -1,0 +1,20 @@
+.Formulario1 input{
+    width: 100vw;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: none;
+}
+.Formulario1 input::placeholder{
+    text-align: center;
+}
+@media screen and (min-width: 768px){
+    .Formulario1 input{
+        height: 50px;
+        font-size: 18px;
+    }
+    .Formulario1 input::placeholder{
+        font-size: 18px;
+    }
+} 

@@ -1,0 +1,7 @@
+.desaparecer{
+    background-color:rgba(172, 128, 128,.0)!important;
+    color:rgba(172, 128, 128,.0)!important;
+    z-index: 99;
+    opacity: 0;
+    transition:0.6s;
+}

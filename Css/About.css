@@ -1,0 +1,43 @@
+#About article{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#About h2{
+    width: 100vw;
+    text-align: center;
+    color: white;
+}
+#About p{
+    color: rgb(215, 255, 255);
+    width: 90vw;
+    text-align: justify;
+}
+#About .ContenedorImagenAbout{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#About .ContenedorImagenAbout img{
+    max-width: 80%;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+@media screen and (min-width: 768px){
+    #About h2{
+    font-size: 30px;
+    }
+    #About p{
+        font-size: 20px;
+    }
+    #About .ContenedorImagenAbout img{
+        max-width: 30%;
+    }
+} 

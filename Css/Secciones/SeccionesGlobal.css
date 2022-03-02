@@ -1,0 +1,10 @@
+#Secciones h2{
+    width: 100vw;
+    text-align: center;
+    color: white;
+}
+@media screen and (min-width: 768px){
+    #Secciones h2{
+        font-size: 35px;
+    }
+} 

@@ -1,0 +1,33 @@
+#BotonAbout, #BotonHome{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(251, 251, 251, 0.25);
+    border-radius: 50%;
+    position: fixed;
+    cursor: pointer;
+}
+#BotonAbout img, #BotonHome img{
+    width: 100%;
+    height: 100%;
+}
+#BotonAbout:hover,#BotonAbout:active, #BotonHome:hover, #BotonHome:active{
+    -webkit-box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 75%);
+    transition: 0.1s;
+}
+/* Posición */
+#BotonAbout{
+    left: 10px;
+    bottom: 10px;
+}
+#BotonHome{
+    right: 10px;
+    bottom: 10px;
+}
+@media screen and (min-width: 768px){
+    #BotonAbout, #BotonHome{
+        width: 60px;
+        height: 60px;
+    }
+} 

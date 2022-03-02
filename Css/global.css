@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background-color: rgb(1, 113, 189);
+    font-family: monospace;
+}
+header{
+    color: rgb(255, 176, 6);
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+footer{
+    min-height: 100px;
+}
+@media screen and (min-width: 768px){
+    header{
+        font-size: 20px;
+    }
+}    

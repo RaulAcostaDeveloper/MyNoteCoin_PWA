@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyNoteCoint</title>
+    <link rel="shortcut icon" href="./Imagenes/Iconos/maskable_icon_x128.ico">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./Css/global.css">
+    <link rel="stylesheet" href="./Css/CantidadesInicio.css">
+    <link rel="stylesheet" href="./Css/BotonesInicioNavegacion.css">
+    <link rel="stylesheet" href="./Css/Botones/Boton1.css">
+    <link rel="stylesheet" href="./Css/Botones/Boton2.css">
+    <link rel="stylesheet" href="./Css/Botones/BotonesFijos.css">
+    <link rel="stylesheet" href="./Css/Secciones/SeccionesGlobal.css">
+    <link rel="stylesheet" href="./Css/Secciones/ElementoEnLista.css">
+    <link rel="stylesheet" href="./Css/TotalResultadosLista.css">
+    <link rel="stylesheet" href="./Css/Formularios/FormulariosGlobal.css">
+    <link rel="stylesheet" href="./Css/Formularios/Formulario1.css">
+    <link rel="stylesheet" href="./Css/About.css">
+    <link rel="stylesheet" href="./Css/TransicionDesaparecer.css">
+    <!-- Scripts Inicio-->
+    <script src="./JavaScript/ManejoDePantallas/Transicion.js"></script>
+
+</head>
+
+<!-- -------------------------------------------------------------------------------------------------------------- -->
+<!-- ANALYTICS -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JD0NXZ1X86"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JD0NXZ1X86');
+</script>
+<!-- -------------------------------------------------------------------------------------------------------------- -->
+
+<body>
+
+    <header>
+        <h1>MyNoteCoin</h1>
+    </header>
+
+    <!-- Principal -->
+    <section id="Principal">
+        <article id="CantidadesInicio">
+            <div id="CantidadesArriba">
+                <div class="ContenedorCantidadArriba">
+                    <div class="CantidadArriba">
+                        <span>$</span>
+                        <span id="CantidadMyTotal">1754.54</span>
+                    </div>
+                    <span class="DescripcionCantidad">My Total</span>
+                </div>
+                <div class="ContenedorCantidadArriba">
+                    <div class="CantidadArriba">
+                        <span>$</span>
+                        <span id="CantidadMyRemaining">1254.54</span>
+                    </div>
+                    <span class="DescripcionCantidad">My Remaining</span>
+                </div>
+                <div class="ContenedorCantidadArriba">
+                    <div class="CantidadArriba">
+                        <span>$</span>
+                        <span id="CantidadMySafeSpendForToday">624.00</span>
+                    </div>
+                    <span class="DescripcionCantidad">My Safe Spend For Today</span>
+                </div>
+            </div>
+            <div id="CantidadMyCash">
+                <div class="CantidadAbajo">
+                    <span>$</span>
+                    <input type="text" placeholder="1754.50" onkeypress="return valideKey(event);">
+                </div>
+                <span class="DescripcionCantidad">My Cash</span>
+            </div>
+        </article>
+
+        <article id="BotonesInicioNavegacion">
+            <div class="BotonInicioElementoEnLista" onclick="_mySpendOnWeek();">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/semana.png" alt="Shedule">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>My Spend On Week</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyExpenses();">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/gastos.png" alt="Shedule">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>My Expenses</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebitCards();">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/tarjetas.png" alt="Shedule">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>My Debit Cards</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebts();">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/deudas.png" alt="Shedule">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>My Debts</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebtors();">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/deudasafavor.png" alt="Shedule">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>My Debtors</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyPendings();">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/gastosfuturos.png" alt="Shedule">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>My Pendings</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyPaymentDay();">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/interrogation-mark.png" alt="Shedule">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>My Payment Day</span>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- Dentro de secciones -->
+    <section id="Secciones">
+        <article id="MySpendOnWeek">
+            <div class="Boton1">
+                <button onclick="_homeApp();">Return</button>
+            </div>
+            <h2>My Spend On Week</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span>1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total Spend On Week</span>
+            </div>
+            <div class="ElementosEnLista">
+                <div class="ElementoEnLista" id="ElementoDayMonday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Monday</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div>
+                            <button onclick="_EditaUnDiaDeLaSemana();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDayThuesday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Thuesday</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div>
+                            <button onclick="_EditaUnDiaDeLaSemana();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDayWednesday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Wednesday</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div>
+                            <button onclick="_EditaUnDiaDeLaSemana();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDayThursday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Thursday</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div>
+                            <button onclick="_EditaUnDiaDeLaSemana();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDayFriday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Friday</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div>
+                            <button onclick="_EditaUnDiaDeLaSemana();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDaySaturday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Saturday</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div>
+                            <button onclick="_EditaUnDiaDeLaSemana();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDaySunday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Sunday</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div>
+                            <button onclick="_EditaUnDiaDeLaSemana();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="MyExpenses">
+            <div class="Boton1">
+                <button onclick="_homeApp();">Return</button>
+            </div>
+            <h2>My Expenses</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span>1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total My Expenses</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_AniadeUnGasto();">New Expense</button>
+            </div>
+            <div class="ElementosEnLista">
+                <!-- Cada elemento debe tener su ID -->
+                <div class="ElementoEnLista" id="ElementoMyExpense1">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/gastos.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>My Expense</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar">
+                        <div>
+                            <button onclick="_EditaUnGasto();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                        <div>
+                            <button onclick="_EliminarElemento('ElementoMyExpense1');"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoMyExpense2">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/gastos.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>My Expense</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar">
+                        <div>
+                            <button onclick="_EditaUnGasto();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                        <div>
+                            <button onclick="_EliminarElemento('ElementoMyExpense2');"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="MyDebitCards">
+            <div class="Boton1">
+                <button onclick="_homeApp();">Return</button>
+            </div>
+            <h2>My Debit Cards</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span>1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total My Debit Cards</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_AniadeUnaTarjeta();">New Debit Card</button>
+            </div>
+            <div class="ElementosEnLista">
+                <div class="ElementoEnLista" id="ElementoMyDebitCard1">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/tarjetas.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>My Debit Card</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar">
+                        <div>
+                            <button onclick="_EditaUnaTarjeta();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                        <div>
+                            <button onclick="_EliminarElemento('ElementoMyDebitCard1');"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoMyDebitCard2">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/tarjetas.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>My Debit Card</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar">
+                        <div>
+                            <button onclick="_EditaUnaTarjeta();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                        <div>
+                            <button onclick="_EliminarElemento('ElementoMyDebitCard2');"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="MyDebts">
+            <div class="Boton1">
+                <button onclick="_homeApp();">Return</button>
+            </div>
+            <h2>My Debts</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span>1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total My Debts</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_AniadeUnaDeuda();">New Debt</button>
+            </div>
+            <div class="ElementosEnLista">
+                <div class="ElementoEnLista" id="ElementoMyDebt1">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/deudas.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>My Debt</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar">
+                        <div>
+                            <button onclick="_EditaUnaDeuda();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                        <div>
+                            <button onclick="_EliminarElemento('ElementoMyDebt1');"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista"id="ElementoMyDebt2">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/deudas.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>My Debt</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar">
+                        <div>
+                            <button onclick="_EditaUnaDeuda();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                        <div>
+                            <button onclick="_EliminarElemento('ElementoMyDebt2');"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="MyDebtors">
+            <div class="Boton1">
+                <button onclick="_homeApp();">Return</button>
+            </div>
+            <h2>My Debtors</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span>1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total My Debtors</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_AniadeUnDeudor();">New Debtor</button>
+            </div>
+            <div class="ElementosEnLista">
+                <div class="ElementoEnLista"id="ElementoMyDebtor1">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/deudasafavor.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>My Debtor</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar">
+                        <div>
+                            <button onclick="_EditaUnDeudor();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                        <div>
+                            <button onclick="_EliminarElemento('ElementoMyDebtor1');"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoMyDebtor2"> 
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/deudasafavor.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>My Debtor</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar">
+                        <div>
+                            <button onclick="_EditaUnDeudor();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                        <div>
+                            <button onclick="_EliminarElemento('ElementoMyDebtor2');"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="MyPendings">
+            <div class="Boton1">
+                <button onclick="_homeApp();">Return</button>
+            </div>
+            <h2>My Pendings</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span>1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total My Pendings</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_AniadeUnPendiente();">New Pending</button>
+            </div>
+            <div class="ElementosEnLista">
+                <div class="ElementoEnLista"  id="ElementoMyPending1">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/gastosfuturos.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>My Pending</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar">
+                        <div>
+                            <button onclick="_EditaUnPendiente();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                        <div>
+                            <button onclick="_EliminarElemento('ElementoMyPending1');"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoMyPending2">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/gastosfuturos.png" alt="Shedule">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>My Pending</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span>8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar">
+                        <div>
+                            <button onclick="_EditaUnPendiente();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                        </div>
+                        <div>
+                            <button onclick="_EliminarElemento('ElementoMyPending2');"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="MyPaymentDay">
+            <div class="Boton1">
+                <button onclick="_homeApp();">Return</button>
+            </div>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>15</span>
+                </div>
+                <span class="DescripcionTotal">First Payment Day</span>
+            </div>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>Last Day Of The Month</span>
+                </div>
+                <span class="DescripcionTotal">Second Payment Day</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_EditaDiasDePago();">Edit Payment Days</button>
+            </div>
+        </article>
+    </section>
+    <!-- Formularios -->
+    <section id="Formularios">
+        <article class="Formulario1" id="EditaUnDiaDeLaSemana">
+            <div class="Boton1">
+                <button onclick="_mySpendOnWeek();">Return</button>
+            </div>
+            <h3>Edit A Day</h3>
+            <form>
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_mySpendOnWeek();">Edit Day</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="AniadeUnGasto">
+            <div class="Boton1">
+                <button onclick="_MyExpenses();">Return</button>
+            </div>
+            <h3>Add A New Expense</h3>
+            <form>
+                <input type="text" placeholder="Title Expense">
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_MyExpenses();">Add New Expense</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaUnGasto">
+            <div class="Boton1">
+                <button onclick="_MyExpenses();">Return</button>
+            </div>
+            <h3>Edit A Expense</h3>
+            <form>
+                <input type="text" placeholder="Title Expense">
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_MyExpenses();">Edit Expense</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="AniadeUnaTarjeta">
+            <div class="Boton1">
+                <button onclick="_MyDebitCards();">Return</button>
+            </div>
+            <h3>Add A New Debit Card</h3>
+            <form>
+                <input type="text" placeholder="Title Debit Card">
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_MyDebitCards();">Add New Debit Card</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaUnaTarjeta">
+            <div class="Boton1">
+                <button onclick="_MyDebitCards();">Return</button>
+            </div>
+            <h3>Edit A Debit Card</h3>
+            <form>
+                <input type="text" placeholder="Title Debit Card">
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_MyDebitCards();">Edit Debit Card</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="AniadeUnaDeuda">
+            <div class="Boton1">
+                <button onclick="_MyDebts();">Return</button>
+            </div>
+            <h3>Add A New Debt</h3>
+            <form>
+                <input type="text" placeholder="Title Debt">
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_MyDebts();">Add New Debt</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaUnaDeuda">
+            <div class="Boton1">
+                <button onclick="_MyDebts();">Return</button>
+            </div>
+            <h3>Edit A Debt</h3>
+            <form>
+                <input type="text" placeholder="Title Debt">
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_MyDebts();">Edit Debt</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="AniadeUnDeudor">
+            <div class="Boton1">
+                <button onclick="_MyDebtors();">Return</button>
+            </div>
+            <h3>Add A New Debtor</h3>
+            <form>
+                <input type="text" placeholder="Title Debtor">
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_MyDebtors();">Add New Debtor</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaUnDeudor">
+            <div class="Boton1">
+                <button onclick="_MyDebtors();">Return</button>
+            </div>
+            <h3>Edit A Debtor</h3>
+            <form>
+                <input type="text" placeholder="Title Debtor">
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_MyDebtors();">Edit Debtor</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="AniadeUnPendiente">
+            <div class="Boton1">
+                <button onclick="_MyPendings();">Return</button>
+            </div>
+            <h3>Add A New Pending</h3>
+            <form>
+                <input type="text" placeholder="Title Pending">
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_MyPendings();">Add New Pending</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaUnPendiente">
+            <div class="Boton1">
+                <button onclick="_MyPendings();">Return</button>
+            </div>
+            <h3>Edit A Pending</h3>
+            <form>
+                <input type="text" placeholder="Title Pending">
+                <input type="text" placeholder="Amount">
+            </form>
+            <div class="Boton2">
+                <button onclick="_MyPendings();">Edit Pending</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaDiasDePago">
+            <div class="Boton1">
+                <button onclick="_MyPaymentDay();">Return</button>
+            </div>
+            <h3>Edit Payment Days</h3>
+            <form>
+                <input type="text" placeholder="First Payment Day">
+                <input type="text" placeholder="Second Payment Day">
+            </form>
+            <span class="DescripcionTotal">Note: Write 31 On Second Payment Day To Indicate The Last Day Of The Month</span>
+            <div class="Boton2">
+                <button onclick="_MyPaymentDay();">Edit Payment Days</button>
+            </div>
+        </article>
+    </section>
+    <!-- About (Welcome) -->
+    <section id="About">
+        <article id="Welcome">
+            <h2>Welcome</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus provident quas aspernatur! Assumenda atque perspiciatis, numquam dolore earum placeat quae minus eius necessitatibus adipisci eos ullam ex officiis exercitationem incidunt?</p>
+        </article>
+        <article id="Guide">
+            <h2>Guide</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptas, exercitationem laudantium cupiditate deserunt corporis atque. Doloribus fugiat neque iste maxime et adipisci provident, laboriosam pariatur, eveniet repellendus ad error!</p>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/Sin título.png" alt="Guide 1"></div>
+        </article>
+        <article id="AboutUs">
+            <h2>About Us</h2>
+            <div class="ContenedorImagenAbout"> <img src="./Imagenes/EveryPixelLogo.png" alt="Every Pixel Logo"></div>
+        </article>
+    </section>
+    <!-- Botones Fijos -->
+    <section id="BotonesFijos">
+        <article>
+            <button id="BotonAbout" onclick="_aboutApp();"><img src="./Imagenes/about.png" alt="About"></button>
+        </article>
+        <article>
+            <button id="BotonHome" onclick="_homeApp();"><img src="./Imagenes/Home.png" alt="About"></button>
+        </article>
+    </section>
+    <footer></footer>
+    <!-- Scripts Final -->
+    <script src="./JavaScript/ManejoDePantallas/ManejoDePantallas.js"></script>
+    <script src="./JavaScript/Validaciones/ValidacionCampos.js"></script>
+</body>
+</html>
