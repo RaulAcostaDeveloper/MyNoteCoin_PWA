@@ -1,4 +1,6 @@
 // Listas
+// PENDIENTE Añadir las listas que faltan...
+// Pendiente traer valores de Local Storage
 let listaSemana = {
     monday:0,
     thuesday:0,
@@ -13,15 +15,21 @@ let seleccionElementoEditar = {
     tipoLista : "",
     elementoLista : "",
 }
+// Inicio de aplicación
+actualizarListasYCalcularTotalListas();
+function actualizarListasYCalcularTotalListas(){
+    // PENDIENTE Añadir las listas que faltan...
+    actualizarLista('listaSemana');
+    calcularTotal('listaSemana');
+}
+// -------------------------------------------------------------------------------------------------------------
 function aniadirElementoALista(tipoLista){
+    // PENDIENTE Añadir flujo para añadir elementos a las listas
 
 }
-// Inicio de aplicación
-actualizarLista('listaSemana');
-calcularTotal('listaSemana');
 function seleccionarElementoEditar(tipoLista, elementoLista){
     seleccionElementoEditar.tipoLista = tipoLista;
-    seleccionElementoEditar.elementoLista = elementoLista;
+    seleccionElementoEditar.elementoLista = elementoLista; //El ID del elemento a editar
     console.log(seleccionElementoEditar.tipoLista, seleccionElementoEditar.elementoLista);
 }
 
@@ -30,6 +38,7 @@ function editaElementoEnLista(formularioUsado){
     let formElement = formulario.querySelector('form');
     let inputElement = formElement.querySelectorAll('input');
 
+    // Esto es una validación, no debería ir aquí
     if (formularioUsado = 'listaSemana') {        
         if(inputElement[0].value.length == 0){
             alert("You must introduce an Amount", "Accept");
@@ -46,10 +55,12 @@ function editaElementoEnLista(formularioUsado){
         return false;
     }
 
+    // PENDIENTE Añadir las listas que faltan...
     switch (seleccionElementoEditar.tipoLista) {
         case 'listaSemana':
             switch (seleccionElementoEditar.elementoLista) {
                 case 'monday':
+                    // Al elemento de la lista le asigna el valor del input
                     listaSemana.monday = inputElement[0].value;
                     break;
                 case 'thuesday':
@@ -73,7 +84,8 @@ function editaElementoEnLista(formularioUsado){
                 default:
                     break;
             }
-            actualizarLista(seleccionElementoEditar.tipoLista);
+            // Cuando edita un valor en cualquiér lista, hay que actualizar y calcular total
+            actualizarLista('listaSemana');
             calcularTotal('listaSemana');
             break;
     
@@ -81,13 +93,13 @@ function editaElementoEnLista(formularioUsado){
             break;
     }
     console.log(listaSemana);
-    
-    
 }
 
 function calcularTotal(tipoLista){
+    // PENDIENTE Añadir las listas que faltan...
     switch (tipoLista) {
         case 'listaSemana':
+            // Suma los elementos con valor numérico de la lista y actualiza el total en el ID
             let total =     Number(listaSemana.monday) + Number(listaSemana.thuesday) + Number(listaSemana.wednesday) + Number(listaSemana.thursday) + Number(listaSemana.friday) + Number(listaSemana.saturday) + Number(listaSemana.sunday);
             document.getElementById("totalSpendOnWeek").innerHTML = total;
             break;
@@ -97,8 +109,10 @@ function calcularTotal(tipoLista){
     }
 }
 function actualizarLista(tipoLista){
+    // PENDIENTE Añadir las listas que faltan...
     switch (tipoLista) {
         case 'listaSemana':
+            // Asigna los valores de la lista en el html
             document.getElementById('monday').innerHTML = listaSemana.monday;
             document.getElementById('thuesday').innerHTML = listaSemana.thuesday;
             document.getElementById('wednesday').innerHTML = listaSemana.wednesday;
