@@ -24,7 +24,6 @@ function valideKey(evt){
  }
 
  function limpiarForm(ID){
-     console.log('limpiarForm ' + ID);
     let formulario = document.getElementById(ID);
     let formElement = formulario.querySelector('form');
     let inputElement = formElement.querySelectorAll('input');
