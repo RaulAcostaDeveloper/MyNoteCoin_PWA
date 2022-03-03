@@ -641,7 +641,7 @@
             <h3>Add A New Expense</h3>
             <form>
                 <input id="AddAExpenseTitle" type="text" placeholder="Title Expense">
-                <input id="AddAExpenseAmount" type="text" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input id="AddAExpenseAmount" type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
                 <button onclick="_MyExpenses();">Add New Expense</button>
@@ -654,7 +654,7 @@
             <h3>Edit A Expense</h3>
             <form>
                 <input type="text" placeholder="Title Expense">
-                <input type="text" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
                 <button onclick="_MyExpenses();">Edit Expense</button>
@@ -667,7 +667,7 @@
             <h3>Add A New Debit Card</h3>
             <form>
                 <input type="text" placeholder="Title Debit Card">
-                <input type="text" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
                 <button onclick="_MyDebitCards();">Add New Debit Card</button>
@@ -680,7 +680,7 @@
             <h3>Edit A Debit Card</h3>
             <form>
                 <input type="text" placeholder="Title Debit Card">
-                <input type="text" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
                 <button onclick="_MyDebitCards();">Edit Debit Card</button>
@@ -693,7 +693,7 @@
             <h3>Add A New Debt</h3>
             <form>
                 <input type="text" placeholder="Title Debt">
-                <input type="text" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
                 <button onclick="_MyDebts();">Add New Debt</button>
@@ -706,7 +706,7 @@
             <h3>Edit A Debt</h3>
             <form>
                 <input type="text" placeholder="Title Debt">
-                <input type="text" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
                 <button onclick="_MyDebts();">Edit Debt</button>
@@ -719,7 +719,7 @@
             <h3>Add A New Debtor</h3>
             <form>
                 <input type="text" placeholder="Title Debtor">
-                <input type="text" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
                 <button onclick="_MyDebtors();">Add New Debtor</button>
@@ -732,7 +732,7 @@
             <h3>Edit A Debtor</h3>
             <form>
                 <input type="text" placeholder="Title Debtor">
-                <input type="text" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
                 <button onclick="_MyDebtors();">Edit Debtor</button>
@@ -745,7 +745,7 @@
             <h3>Add A New Pending</h3>
             <form>
                 <input type="text" placeholder="Title Pending">
-                <input type="text" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
                 <button onclick="_MyPendings();">Add New Pending</button>
@@ -758,7 +758,7 @@
             <h3>Edit A Pending</h3>
             <form>
                 <input type="text" placeholder="Title Pending">
-                <input type="text" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
                 <button onclick="_MyPendings();">Edit Pending</button>
@@ -771,7 +771,7 @@
             <h3>Edit Payment Days</h3>
             <form>
                 <input id="FirstPaymentDay" type="text" placeholder="First Payment Day" onclick="limpiarForm('FirstPaymentDay');" onkeypress="return longitudDiasDePago(event, 'FirstPaymentDay');">
-                <input id="SecondPaymentDay" type="text" placeholder="Second Payment Day" onclick="limpiarForm('SecondPaymentDay');" onkeypress="return longitudDiasDePago(event, 'SecondPaymentDay');">
+                <input id="SecondPaymentDay" type="number" placeholder="Second Payment Day" onclick="limpiarForm('SecondPaymentDay');" onkeypress="return longitudDiasDePago(event, 'SecondPaymentDay');">
             </form>
             <span class="DescripcionTotal">Note: Write 31 On Second Payment Day To Indicate The Last Day Of The Month</span>
             <div class="Boton2">
