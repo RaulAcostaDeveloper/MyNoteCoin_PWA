@@ -1,7 +1,7 @@
 #CantidadesArriba{
     display: flex;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
 }
 #CantidadesArriba .ContenedorCantidadArriba{
     width: 30%;
@@ -16,13 +16,12 @@
 }
 #CantidadesArriba .DescripcionCantidad{
     display: block;
-    width: 30vw;
     text-align: center;
     font-size: 12px;
     color: rgb(204, 204, 204);
 }
 #CantidadMyCash{
-    width: 100vw;
+    width: 100%;
 }
 #CantidadMyCash div{
     width: 100%;

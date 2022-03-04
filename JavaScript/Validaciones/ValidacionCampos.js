@@ -31,3 +31,4 @@ function valideKey(evt){
         inputElement[index].value = "";
     }
 }
+    // Validar también input de efectivo en la pantalla principal... on change

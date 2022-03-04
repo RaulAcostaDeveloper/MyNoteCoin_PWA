@@ -1,5 +1,5 @@
 .TotalResultadosLista div{
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -9,7 +9,7 @@
 }
 .DescripcionTotal{
     display: block;
-    width: 100vw;
+    width: 100%;
     text-align: center;
     color: rgb(204, 204, 204);
 }

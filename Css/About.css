@@ -6,17 +6,17 @@
     margin-bottom: 20px;
 }
 #About h2{
-    width: 100vw;
+    width: 100%;
     text-align: center;
     color: white;
 }
 #About p{
     color: rgb(215, 255, 255);
-    width: 90vw;
+    width: 90%;
     text-align: justify;
 }
 #About .ContenedorImagenAbout{
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

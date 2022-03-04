@@ -39,6 +39,7 @@ function editaElementoEnLista(formularioUsado){
     let inputElement = formElement.querySelectorAll('input');
 
     // Esto es una validación, no debería ir aquí
+    // Validar también input de efectivo en la pantalla principal... on change
     if (formularioUsado = 'listaSemana') {        
         if(inputElement[0].value.length == 0){
             alert("You must introduce an Amount", "Accept");

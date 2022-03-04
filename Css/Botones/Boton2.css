@@ -1,7 +1,7 @@
 .Boton2{
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
