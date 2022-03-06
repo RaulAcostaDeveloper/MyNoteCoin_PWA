@@ -2,7 +2,6 @@ function valideKey(evt){
     // code is the decimal ASCII representation of the pressed key.
     // Solo aceptará que se aprieten teclas de números del 0 al 9
     var code = (evt.which) ? evt.which : evt.keyCode;
-    
     if(code==8) { // backspace.
       return true;
     } else if(code>=48 && code<=57) { // is a number.
@@ -31,4 +30,11 @@ function valideKey(evt){
         inputElement[index].value = "";
     }
 }
-    // Validar también input de efectivo en la pantalla principal... on change
+
+function validarCampoVacio(campoId){
+  console.log('Valida ' + campoId);
+  let elementoInput = document.getElementById(campoId);
+  if(elementoInput.value.length < 1){
+    elementoInput.innerHTML = 0;
+  }
+}

@@ -73,7 +73,8 @@
             <div id="CantidadMyCash">
                 <div class="CantidadAbajo">
                     <span>$</span>
-                    <input type="number" placeholder="000" onkeypress="return valideKey(event);">
+                    <!-- Ignorar este error en  onkeypress="return , porque si funciona-->
+                    <input id="MyCashId" type="number" placeholder="000" onkeypress="return valideKey(event);" onchange="validarCampoVacio('MyCashId')">
                 </div>
                 <span class="DescripcionCantidad">My Cash</span>
             </div>
@@ -168,7 +169,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElementoEditar('listaSemana','monday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','monday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -187,7 +188,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElementoEditar('listaSemana','thuesday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','thuesday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -206,7 +207,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElementoEditar('listaSemana','wednesday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','wednesday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -225,7 +226,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElementoEditar('listaSemana','thursday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','thursday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -244,7 +245,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElementoEditar('listaSemana','friday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','friday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -263,7 +264,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElementoEditar('listaSemana','saturday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','saturday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -282,7 +283,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElementoEditar('listaSemana','sunday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','sunday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -296,14 +297,14 @@
             <div class="TotalResultadosLista">
                 <div>
                     <span>$</span>
-                    <span>1754.50</span>
+                    <span id="totalMyExpenses">1754.50</span>
                 </div>
                 <span class="DescripcionTotal">Total My Expenses</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnGasto(); limpiarForm('AniadeUnGasto');">New Expense</button>
+                <button onclick="_AniadeUnGasto(); limpiarForm('AniadeUnGasto'); seleccionarElemento('expenses', '');">New Expense</button>
             </div>
-            <div class="ElementosEnLista">
+            <div class="ElementosEnLista" id="listaElementosExpenses">
                 <!-- Cada elemento debe tener su ID -->
                 <div class="ElementoEnLista" id="ElementoMyExpense1">
                     <div class="ContenedorImagenPrincipalElementoEnLista">
@@ -359,14 +360,14 @@
             <div class="TotalResultadosLista">
                 <div>
                     <span>$</span>
-                    <span>1754.50</span>
+                    <span id="totalMyDebitCards">1754.50</span>
                 </div>
                 <span class="DescripcionTotal">Total My Debit Cards</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnaTarjeta(); limpiarForm('AniadeUnaTarjeta');">New Debit Card</button>
+                <button onclick="_AniadeUnaTarjeta(); limpiarForm('AniadeUnaTarjeta'); seleccionarElemento('debitCards', '');">New Debit Card</button>
             </div>
-            <div class="ElementosEnLista">
+            <div class="ElementosEnLista" id="listaElementosDebitCards">
                 <div class="ElementoEnLista" id="ElementoMyDebitCard1">
                     <div class="ContenedorImagenPrincipalElementoEnLista">
                         <img src="./Imagenes/Secciones/tarjetas.png" alt="Shedule">
@@ -421,14 +422,14 @@
             <div class="TotalResultadosLista">
                 <div>
                     <span>$</span>
-                    <span>1754.50</span>
+                    <span id="totalMyDebts">1754.50</span>
                 </div>
                 <span class="DescripcionTotal">Total My Debts</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnaDeuda(); limpiarForm('AniadeUnaDeuda');">New Debt</button>
+                <button onclick="_AniadeUnaDeuda(); limpiarForm('AniadeUnaDeuda'); seleccionarElemento('debts', '');">New Debt</button>
             </div>
-            <div class="ElementosEnLista">
+            <div class="ElementosEnLista" id="listaElementosDebts">
                 <div class="ElementoEnLista" id="ElementoMyDebt1">
                     <div class="ContenedorImagenPrincipalElementoEnLista">
                         <img src="./Imagenes/Secciones/deudas.png" alt="Shedule">
@@ -483,14 +484,14 @@
             <div class="TotalResultadosLista">
                 <div>
                     <span>$</span>
-                    <span>1754.50</span>
+                    <span id="totalMyDebtors">1754.50</span>
                 </div>
                 <span class="DescripcionTotal">Total My Debtors</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnDeudor(); limpiarForm('AniadeUnDeudor');">New Debtor</button>
+                <button onclick="_AniadeUnDeudor(); limpiarForm('AniadeUnDeudor'); seleccionarElemento('debtors','');">New Debtor</button>
             </div>
-            <div class="ElementosEnLista">
+            <div class="ElementosEnLista" id="listaElementosDebtors">
                 <div class="ElementoEnLista"id="ElementoMyDebtor1">
                     <div class="ContenedorImagenPrincipalElementoEnLista">
                         <img src="./Imagenes/Secciones/deudasafavor.png" alt="Shedule">
@@ -545,14 +546,14 @@
             <div class="TotalResultadosLista">
                 <div>
                     <span>$</span>
-                    <span>1754.50</span>
+                    <span id="totalMyPendings">1754.50</span>
                 </div>
                 <span class="DescripcionTotal">Total My Pendings</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnPendiente(); limpiarForm('AniadeUnPendiente');">New Pending</button>
+                <button onclick="_AniadeUnPendiente(); limpiarForm('AniadeUnPendiente'); seleccionarElemento('pendings','');">New Pending</button>
             </div>
-            <div class="ElementosEnLista">
+            <div class="ElementosEnLista" id="listaElementosPendings">
                 <div class="ElementoEnLista"  id="ElementoMyPending1">
                     <div class="ContenedorImagenPrincipalElementoEnLista">
                         <img src="./Imagenes/Secciones/gastosfuturos.png" alt="Shedule">
@@ -641,10 +642,10 @@
             <h3>Add A New Expense</h3>
             <form>
                 <input id="AddAExpenseTitle" type="text" placeholder="Title Expense">
-                <input id="AddAExpenseAmount" type="number" placeholder="Amount" onkeypress="return valideKey(event);">
+                <input id="AddAExpenseAmount" type="number" placeholder="Amount" onkeypress=" return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="_MyExpenses();">Add New Expense</button>
+                <button onclick="aniadirElementoALista('AniadeUnGasto');">Add New Expense</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaUnGasto">
@@ -670,7 +671,7 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="_MyDebitCards();">Add New Debit Card</button>
+                <button onclick="aniadirElementoALista('AniadeUnaTarjeta')">Add New Debit Card</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaUnaTarjeta">
@@ -696,7 +697,7 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="_MyDebts();">Add New Debt</button>
+                <button onclick="aniadirElementoALista('AniadeUnaDeuda')">Add New Debt</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaUnaDeuda">
@@ -722,7 +723,7 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="_MyDebtors();">Add New Debtor</button>
+                <button onclick="aniadirElementoALista('AniadeUnDeudor');">Add New Debtor</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaUnDeudor">
@@ -748,7 +749,7 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="_MyPendings();">Add New Pending</button>
+                <button onclick="aniadirElementoALista('AniadeUnPendiente');">Add New Pending</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaUnPendiente">
@@ -770,8 +771,8 @@
             </div>
             <h3>Edit Payment Days</h3>
             <form>
-                <input id="FirstPaymentDay" type="number" placeholder="First Payment Day" onclick="limpiarForm('FirstPaymentDay');" onkeypress="return longitudDiasDePago(event, 'FirstPaymentDay');">
-                <input id="SecondPaymentDay" type="number" placeholder="Second Payment Day" onclick="limpiarForm('SecondPaymentDay');" onkeypress="return longitudDiasDePago(event, 'SecondPaymentDay');">
+                <input id="FirstPaymentDay" type="number" placeholder="First Payment Day" onkeypress="return longitudDiasDePago(event, 'FirstPaymentDay');">
+                <input id="SecondPaymentDay" type="number" placeholder="Second Payment Day" onkeypress="return longitudDiasDePago(event, 'SecondPaymentDay');">
             </form>
             <span class="DescripcionTotal">Note: Write 31 On Second Payment Day To Indicate The Last Day Of The Month</span>
             <div class="Boton2">

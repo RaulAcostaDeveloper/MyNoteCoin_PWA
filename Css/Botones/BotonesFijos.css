@@ -18,11 +18,11 @@
 }
 /* Posición */
 #BotonAbout{
-    left: 10px;
+    right: 10px;
     bottom: 10px;
 }
 #BotonHome{
-    right: 10px;
+    left: 10px;
     bottom: 10px;
 }
 @media screen and (min-width: 768px){
