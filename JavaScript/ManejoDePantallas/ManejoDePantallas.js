@@ -372,8 +372,6 @@ function _EditaDiasDePago(){
 }
 // Eliminar Elemento
 function _EliminarElemento(elemento){
-    console.log(elemento);
-    // Porqué
     let elementoDesaparecer = document.getElementById(elemento);
     _desaparecer(elementoDesaparecer);
 }
