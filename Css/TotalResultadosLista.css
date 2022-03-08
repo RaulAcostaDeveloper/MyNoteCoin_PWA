@@ -13,6 +13,10 @@
     text-align: center;
     color: rgb(204, 204, 204);
 }
+/* Caso especial para días restantes */
+#diasRestantes{
+    margin-top: 20px;
+}
 @media screen and (min-width: 768px){
     .TotalResultadosLista div{
         font-size: 35px;

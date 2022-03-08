@@ -51,21 +51,21 @@
                 <div class="ContenedorCantidadArriba">
                     <div class="CantidadArriba">
                         <span>$</span>
-                        <span id="CantidadMyTotal">1754.54</span>
+                        <span id="CantidadMyTotal">000</span>
                     </div>
                     <span class="DescripcionCantidad">My Total</span>
                 </div>
                 <div class="ContenedorCantidadArriba">
                     <div class="CantidadArriba">
                         <span>$</span>
-                        <span id="CantidadMyRemaining">1254.54</span>
+                        <span id="CantidadMyRemaining">000</span>
                     </div>
                     <span class="DescripcionCantidad">My Remaining</span>
                 </div>
                 <div class="ContenedorCantidadArriba">
                     <div class="CantidadArriba">
                         <span>$</span>
-                        <span id="CantidadMySafeSpendForToday">624.00</span>
+                        <span id="CantidadMySafeSpendForToday">000</span>
                     </div>
                     <span class="DescripcionCantidad">My Safe Spend For Today</span>
                 </div>
@@ -74,7 +74,7 @@
                 <div class="CantidadAbajo">
                     <span>$</span>
                     <!-- Ignorar este error en  onkeypress="return , porque si funciona-->
-                    <input id="MyCashId" type="number" placeholder="000" onkeypress="return valideKey(event);" onchange="validarCampoVacio('MyCashId')">
+                    <input id="MyCashId" type="number" placeholder="000" onkeypress="return valideKey(event);" oninput="validarCampoVacio('MyCashId'); actualizarMyCash();">
                 </div>
                 <span class="DescripcionCantidad">My Cash</span>
             </div>
@@ -169,7 +169,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','monday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','monday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -188,7 +188,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','thuesday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','thuesday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -207,7 +207,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','wednesday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','wednesday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -226,7 +226,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','thursday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','thursday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -245,7 +245,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','friday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','friday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -264,7 +264,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','saturday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','saturday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -283,7 +283,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div>
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','sunday');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','sunday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -400,8 +400,11 @@
                 </div>
                 <span class="DescripcionTotal">Second Payment Day</span>
             </div>
-            <div class="Boton2">
-                <button onclick="_EditaDiasDePago(); limpiarForm('EditaDiasDePago'); seleccionarElemento('paymentDays',''); reproducirClick();">Edit Payment Days</button>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span id="diasRestantes"></span>
+                </div>
+                <span class="DescripcionTotal">Remaining Days For Fortnight</span>
             </div>
         </article>
     </section>
@@ -592,9 +595,9 @@
     <footer></footer>
     <!-- Scripts Final -->
     <script src="./JavaScript/ManejoDePantallas/ManejoDePantallas.js"></script>
+    <script src="./JavaScript/Listas/MovimientosListas.js"></script>
     <script src="./JavaScript/Validaciones/ValidacionCampos.js"></script>
     <script src="./JavaScript/MovimientosDinero/MovimientosDinero.js"></script>
-    <script src="./JavaScript/Listas/MovimientosListas.js"></script>
     <script src="./JavaScript/Audio/ReproducirAudio.js"></script>
 </body>
 </html>

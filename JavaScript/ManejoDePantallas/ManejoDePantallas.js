@@ -33,6 +33,7 @@ let EditaDiasDePago = document.getElementById("EditaDiasDePago");
 
 // Inicio de la Aplicación
 _homeApp();
+
 function _homeApp(){
     _desaparecer(BotonHome);
     _desaparecer(About);
@@ -42,7 +43,6 @@ function _homeApp(){
     _aparecer(BotonAbout);
     _aparecer(Principal);
 }
-
 function _aboutApp(){
     _desaparecer(BotonAbout);
     _desaparecer(Secciones);
@@ -52,7 +52,6 @@ function _aboutApp(){
     _aparecer(BotonHome);
     _aparecer(About);
 }
-
 // Para las secciones, hay que aparecer Secciones y la sección que se desee
 // Pero también hay que desaparecer las demás secciones que se aparecen cuando se aparece "Secciones"
 function _mySpendOnWeek(){

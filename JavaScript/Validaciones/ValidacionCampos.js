@@ -32,7 +32,6 @@ function valideKey(evt){
 }
 
 function validarCampoVacio(campoId){
-  console.log('Valida ' + campoId);
   let elementoInput = document.getElementById(campoId);
   if(elementoInput.value.length < 1){
     elementoInput.innerHTML = 0;

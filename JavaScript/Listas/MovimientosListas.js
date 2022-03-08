@@ -31,9 +31,15 @@ let seleccionElemento = {
     tipoLista : "",
     elementoLista : "",
 };
+let diasRestantesQuincena = calculaDiasRestantesParaQuincena();
+
 // Inicio de aplicación
-aniadirElementosDePruebaAListas(); //Aquí
-actualizarListasYMostrarTotalListas();
+// Que tarde .300 seg para que de tiempo de cargar todas las funciones usadas
+setTimeout(() => {
+    aniadirElementosDePruebaAListas(); //Aquí
+    actualizarListasYMostrarTotalListas();
+}, 300);
+
 function actualizarListasYMostrarTotalListas(){
     actualizarLista('listaSemana');
     mostrarTotal('listaSemana');
@@ -47,6 +53,7 @@ function actualizarListasYMostrarTotalListas(){
     mostrarTotal('debtors');
     actualizarLista('pendings');
     mostrarTotal('pendings');
+    actualizarLista('paymentDays');
 }
 function aniadirElementosDePruebaAListas(){
     for (let index = 0; index < 5; index++) {
@@ -177,6 +184,9 @@ function aniadirElementoALista(formularioUsado){
     }
     
     console.log('Valores Nuevos: ' + inputElement[0].value + " " + inputElement[1].value);
+    // Al añadir, editar o borrar un elemento, es necesario volver a calular todo
+    calculaCantidades(); //De MovimientosDinero.js
+    actualizarVistaCantidadesInicio(); //De MovimientosDinero.js
 }
 function editaElementoEnLista(formularioUsado){
     console.log('formularioUsado ' + formularioUsado);
@@ -312,29 +322,56 @@ function editaElementoEnLista(formularioUsado){
         default:
             break;
     }
+    // Al añadir, editar o borrar un elemento, es necesario volver a calular todo
+    calculaCantidades(); //De MovimientosDinero.js
+    actualizarVistaCantidadesInicio(); //De MovimientosDinero.js
 }
 function eliminarElementoEnLista(){
     console.log('Eliminar elemento ' + seleccionElemento.elementoLista);
     switch (seleccionElemento.tipoLista) {
         case 'expenses':
             // Borra un objeto de la lista, cuyo id es el que obtiene de la función encontrarElementoEnLista();
+            // El SetTimeOut es para que de tiempo a la animación de aparecer
             expenses.splice(encontrarElementoEnLista(expenses),1);
+            setTimeout(() => {
+                actualizarLista('expenses');
+                mostrarTotal('expenses');
+            }, 500);
             break;
         case 'debitCards':
             debitCards.splice(encontrarElementoEnLista(debitCards),1);
+            setTimeout(() => {
+                actualizarLista('debitCards');
+                mostrarTotal('debitCards');
+            }, 500);
             break;
         case 'debts':
             debts.splice(encontrarElementoEnLista(debts),1);
+            setTimeout(() => {
+                actualizarLista('debts');
+                mostrarTotal('debts');
+            }, 500);
             break;
         case 'debtors':
             debtors.splice(encontrarElementoEnLista(debtors),1);
+            setTimeout(() => {
+                actualizarLista('debtors');
+                mostrarTotal('debtors');
+            }, 500);
             break;
         case 'pendings':
             pendings.splice(encontrarElementoEnLista(pendings),1);
+            setTimeout(() => {
+                actualizarLista('pendings');
+                mostrarTotal('pendings');
+            }, 500);
             break;
         default:
             break;
     }
+    // Al añadir, editar o borrar un elemento, es necesario volver a calular todo
+    calculaCantidades(); //De MovimientosDinero.js
+    actualizarVistaCantidadesInicio(); //De MovimientosDinero.js
 }
 function actualizarLista(tipoLista){
     // Asigna los valores de la lista en el html
@@ -365,12 +402,7 @@ function actualizarLista(tipoLista){
             document.getElementById("listaElementosPendings").innerHTML = crearJSONElementos('gastosfuturos.png', pendings, '_EditaUnPendiente', 'EditaUnPendiente', 'pendings');
             break;
         case 'paymentDays':
-            document.getElementById("firstPaymentDay").innerHTML = paymentDays.firstPaymentDay;
-            if (paymentDays.secondPaymentDay >= 28) {
-                document.getElementById("secondPaymentDay").innerHTML = "Last Day Of The Month";
-            } else {
-                document.getElementById("secondPaymentDay").innerHTML = paymentDays.secondPaymentDay;
-            }
+            document.getElementById("diasRestantes").innerHTML = diasRestantesQuincena;
             break;
         default:
             break;
@@ -446,4 +478,28 @@ function encontrarElementoEnLista(array){
         }
     }
     console.log('No Se Encontró El Elemento');
+}
+//Solo actualiza la variable
+function calculaDiasRestantesParaQuincena(){
+    //Obtener días restantes para la quincena
+    //Siempre se va a ejecutar al iniciar la aplicación
+    let diasRestantesQuincena = 0;
+    let fecha = new Date();
+    let ultimoDiaFecha = new Date(fecha.getFullYear(), fecha.getMonth() + 1, 0);
+    let ultimoDiaMes = ultimoDiaFecha.getDate();
+    let diaDelMesActual = fecha.getDate();
+
+    if(diaDelMesActual < 15){
+        diasRestantesQuincena = 15 - diaDelMesActual;
+    } else if(diaDelMesActual > 15){
+        diasRestantesQuincena = ultimoDiaMes - diaDelMesActual;
+    } else if(diaDelMesActual == 15){
+        diasRestantesQuincena = 1;
+    } else if(diaDelMesActual == ultimoDiaMes) {
+        diasRestantesQuincena = 1;
+    } else {
+        console.log("Error en días Restantes Quincena");
+        diasRestantesQuincena = 1;
+    }
+    return diasRestantesQuincena;
 }
