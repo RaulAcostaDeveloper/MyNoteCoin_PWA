@@ -81,7 +81,7 @@
         </article>
 
         <article id="BotonesInicioNavegacion">
-            <div class="BotonInicioElementoEnLista" onclick="_mySpendOnWeek();">
+            <div class="BotonInicioElementoEnLista" onclick="_mySpendOnWeek(); reproducirClick();">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/semana.png" alt="Shedule">
                 </div>
@@ -89,7 +89,7 @@
                     <span>My Spend On Week</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyExpenses();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyExpenses(); reproducirClick();">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/gastos.png" alt="Shedule">
                 </div>
@@ -97,7 +97,7 @@
                     <span>My Expenses</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyDebitCards();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebitCards(); reproducirClick()">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/tarjetas.png" alt="Shedule">
                 </div>
@@ -105,7 +105,7 @@
                     <span>My Debit Cards</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyDebts();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebts(); reproducirClick();">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/deudas.png" alt="Shedule">
                 </div>
@@ -113,7 +113,7 @@
                     <span>My Debts</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyDebtors();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebtors(); reproducirClick();">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/deudasafavor.png" alt="Shedule">
                 </div>
@@ -121,7 +121,7 @@
                     <span>My Debtors</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyPendings();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyPendings(); reproducirClick();">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/gastosfuturos.png" alt="Shedule">
                 </div>
@@ -129,7 +129,7 @@
                     <span>My Pendings</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyPaymentDay();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyPaymentDay(); reproducirClick();">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/interrogation-mark.png" alt="Shedule">
                 </div>
@@ -143,7 +143,7 @@
     <section id="Secciones">
         <article id="MySpendOnWeek">
             <div class="Boton1">
-                <button onclick="_homeApp();">Return</button>
+                <button onclick="_homeApp(); reproducirClick();">Return</button>
             </div>
             <h2>My Spend On Week</h2>
             <div class="TotalResultadosLista">
@@ -291,7 +291,7 @@
         </article>
         <article id="MyExpenses">
             <div class="Boton1">
-                <button onclick="_homeApp();">Return</button>
+                <button onclick="_homeApp(); reproducirClick();">Return</button>
             </div>
             <h2>My Expenses</h2>
             <div class="TotalResultadosLista">
@@ -302,7 +302,7 @@
                 <span class="DescripcionTotal">Total My Expenses</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnGasto(); limpiarForm('AniadeUnGasto'); seleccionarElemento('expenses', '');">New Expense</button>
+                <button onclick="_AniadeUnGasto(); limpiarForm('AniadeUnGasto'); seleccionarElemento('expenses', ''); reproducirClick();">New Expense</button>
             </div>
             <!-- Lista de elementos -->
             <div class="ElementosEnLista" id="listaElementosExpenses">
@@ -310,7 +310,7 @@
         </article>
         <article id="MyDebitCards">
             <div class="Boton1">
-                <button onclick="_homeApp();">Return</button>
+                <button onclick="_homeApp(); reproducirClick();">Return</button>
             </div>
             <h2>My Debit Cards</h2>
             <div class="TotalResultadosLista">
@@ -321,7 +321,7 @@
                 <span class="DescripcionTotal">Total My Debit Cards</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnaTarjeta(); limpiarForm('AniadeUnaTarjeta'); seleccionarElemento('debitCards', '');">New Debit Card</button>
+                <button onclick="_AniadeUnaTarjeta(); limpiarForm('AniadeUnaTarjeta'); seleccionarElemento('debitCards', ''); reproducirClick();">New Debit Card</button>
             </div>
             <!-- Lista de Elementos -->
             <div class="ElementosEnLista" id="listaElementosDebitCards">
@@ -329,7 +329,7 @@
         </article>
         <article id="MyDebts">
             <div class="Boton1">
-                <button onclick="_homeApp();">Return</button>
+                <button onclick="_homeApp(); reproducirClick();">Return</button>
             </div>
             <h2>My Debts</h2>
             <div class="TotalResultadosLista">
@@ -340,7 +340,7 @@
                 <span class="DescripcionTotal">Total My Debts</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnaDeuda(); limpiarForm('AniadeUnaDeuda'); seleccionarElemento('debts', '');">New Debt</button>
+                <button onclick="_AniadeUnaDeuda(); limpiarForm('AniadeUnaDeuda'); seleccionarElemento('debts', ''); reproducirClick();">New Debt</button>
             </div>
             <!-- Lista De Elementos -->
             <div class="ElementosEnLista" id="listaElementosDebts">
@@ -348,7 +348,7 @@
         </article>
         <article id="MyDebtors">
             <div class="Boton1">
-                <button onclick="_homeApp();">Return</button>
+                <button onclick="_homeApp(); reproducirClick();">Return</button>
             </div>
             <h2>My Debtors</h2>
             <div class="TotalResultadosLista">
@@ -359,7 +359,7 @@
                 <span class="DescripcionTotal">Total My Debtors</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnDeudor(); limpiarForm('AniadeUnDeudor'); seleccionarElemento('debtors','');">New Debtor</button>
+                <button onclick="_AniadeUnDeudor(); limpiarForm('AniadeUnDeudor'); seleccionarElemento('debtors',''); reproducirClick();">New Debtor</button>
             </div>
             <!-- Lista De Elementos -->
             <div class="ElementosEnLista" id="listaElementosDebtors">
@@ -367,7 +367,7 @@
         </article>
         <article id="MyPendings">
             <div class="Boton1">
-                <button onclick="_homeApp();">Return</button>
+                <button onclick="_homeApp(); reproducirClick();">Return</button>
             </div>
             <h2>My Pendings</h2>
             <div class="TotalResultadosLista">
@@ -378,7 +378,7 @@
                 <span class="DescripcionTotal">Total My Pendings</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnPendiente(); limpiarForm('AniadeUnPendiente'); seleccionarElemento('pendings','');">New Pending</button>
+                <button onclick="_AniadeUnPendiente(); limpiarForm('AniadeUnPendiente'); seleccionarElemento('pendings',''); reproducirClick();">New Pending</button>
             </div>
             <!-- Lista De Elementos -->
             <div class="ElementosEnLista" id="listaElementosPendings">
@@ -386,7 +386,7 @@
         </article>
         <article id="MyPaymentDay">
             <div class="Boton1">
-                <button onclick="_homeApp();">Return</button>
+                <button onclick="_homeApp(); reproducirClick();">Return</button>
             </div>
             <div class="TotalResultadosLista">
                 <div>
@@ -401,7 +401,7 @@
                 <span class="DescripcionTotal">Second Payment Day</span>
             </div>
             <div class="Boton2">
-                <button onclick="_EditaDiasDePago(); limpiarForm('EditaDiasDePago'); seleccionarElemento('paymentDays','');">Edit Payment Days</button>
+                <button onclick="_EditaDiasDePago(); limpiarForm('EditaDiasDePago'); seleccionarElemento('paymentDays',''); reproducirClick();">Edit Payment Days</button>
             </div>
         </article>
     </section>
@@ -409,19 +409,19 @@
     <section id="Formularios">
         <article class="Formulario1" id="EditaUnDiaDeLaSemana">
             <div class="Boton1">
-                <button onclick="_mySpendOnWeek();">Return</button>
+                <button onclick="_mySpendOnWeek(); reproducirClick();">Return</button>
             </div>
             <h3>Edit A Day</h3>
             <form>
                 <input id="AmountDay" type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="editaElementoEnLista('EditaUnDiaDeLaSemana');">Edit Day</button>
+                <button onclick="editaElementoEnLista('EditaUnDiaDeLaSemana'); reproducirClick();">Edit Day</button>
             </div>
         </article>
         <article class="Formulario1" id="AniadeUnGasto">
             <div class="Boton1">
-                <button onclick="_MyExpenses();">Return</button>
+                <button onclick="_MyExpenses(); reproducirClick();">Return</button>
             </div>
             <h3>Add A New Expense</h3>
             <form>
@@ -429,12 +429,12 @@
                 <input id="AddAExpenseAmount" type="number" placeholder="Amount" onkeypress=" return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="aniadirElementoALista('AniadeUnGasto');">Add New Expense</button>
+                <button onclick="aniadirElementoALista('AniadeUnGasto'); reproducirClick();">Add New Expense</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaUnGasto">
             <div class="Boton1">
-                <button onclick="_MyExpenses();">Return</button>
+                <button onclick="_MyExpenses(); reproducirClick();">Return</button>
             </div>
             <h3>Edit A Expense</h3>
             <form>
@@ -442,12 +442,12 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="editaElementoEnLista('EditaUnGasto');">Edit Expense</button>
+                <button onclick="editaElementoEnLista('EditaUnGasto'); reproducirClick();">Edit Expense</button>
             </div>
         </article>
         <article class="Formulario1" id="AniadeUnaTarjeta">
             <div class="Boton1">
-                <button onclick="_MyDebitCards();">Return</button>
+                <button onclick="_MyDebitCards(); reproducirClick();">Return</button>
             </div>
             <h3>Add A New Debit Card</h3>
             <form>
@@ -455,12 +455,12 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="aniadirElementoALista('AniadeUnaTarjeta')">Add New Debit Card</button>
+                <button onclick="aniadirElementoALista('AniadeUnaTarjeta'); reproducirClick();">Add New Debit Card</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaUnaTarjeta">
             <div class="Boton1">
-                <button onclick="_MyDebitCards();">Return</button>
+                <button onclick="_MyDebitCards(); reproducirClick();">Return</button>
             </div>
             <h3>Edit A Debit Card</h3>
             <form>
@@ -468,12 +468,12 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="editaElementoEnLista('EditaUnaTarjeta');">Edit Debit Card</button>
+                <button onclick="editaElementoEnLista('EditaUnaTarjeta'); reproducirClick();">Edit Debit Card</button>
             </div>
         </article>
         <article class="Formulario1" id="AniadeUnaDeuda">
             <div class="Boton1">
-                <button onclick="_MyDebts();">Return</button>
+                <button onclick="_MyDebts(); reproducirClick();">Return</button>
             </div>
             <h3>Add A New Debt</h3>
             <form>
@@ -481,12 +481,12 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="aniadirElementoALista('AniadeUnaDeuda')">Add New Debt</button>
+                <button onclick="aniadirElementoALista('AniadeUnaDeuda'); reproducirClick();">Add New Debt</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaUnaDeuda">
             <div class="Boton1">
-                <button onclick="_MyDebts();">Return</button>
+                <button onclick="_MyDebts(); reproducirClick();">Return</button>
             </div>
             <h3>Edit A Debt</h3>
             <form>
@@ -494,12 +494,12 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="editaElementoEnLista('EditaUnaDeuda');">Edit Debt</button>
+                <button onclick="editaElementoEnLista('EditaUnaDeuda'); reproducirClick();">Edit Debt</button>
             </div>
         </article>
         <article class="Formulario1" id="AniadeUnDeudor">
             <div class="Boton1">
-                <button onclick="_MyDebtors();">Return</button>
+                <button onclick="_MyDebtors();reproducirClick();">Return</button>
             </div>
             <h3>Add A New Debtor</h3>
             <form>
@@ -507,12 +507,12 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="aniadirElementoALista('AniadeUnDeudor');">Add New Debtor</button>
+                <button onclick="aniadirElementoALista('AniadeUnDeudor'); reproducirClick();">Add New Debtor</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaUnDeudor">
             <div class="Boton1">
-                <button onclick="_MyDebtors();">Return</button>
+                <button onclick="_MyDebtors(); reproducirClick();">Return</button>
             </div>
             <h3>Edit A Debtor</h3>
             <form>
@@ -520,12 +520,12 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="editaElementoEnLista('EditaUnDeudor');">Edit Debtor</button>
+                <button onclick="editaElementoEnLista('EditaUnDeudor'); reproducirClick();">Edit Debtor</button>
             </div>
         </article>
         <article class="Formulario1" id="AniadeUnPendiente">
             <div class="Boton1">
-                <button onclick="_MyPendings();">Return</button>
+                <button onclick="_MyPendings(); reproducirClick();">Return</button>
             </div>
             <h3>Add A New Pending</h3>
             <form>
@@ -533,12 +533,12 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="aniadirElementoALista('AniadeUnPendiente');">Add New Pending</button>
+                <button onclick="aniadirElementoALista('AniadeUnPendiente'); reproducirClick();">Add New Pending</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaUnPendiente">
             <div class="Boton1">
-                <button onclick="_MyPendings();">Return</button>
+                <button onclick="_MyPendings(); reproducirClick();">Return</button>
             </div>
             <h3>Edit A Pending</h3>
             <form>
@@ -546,12 +546,12 @@
                 <input type="number" placeholder="Amount" onkeypress="return valideKey(event);">
             </form>
             <div class="Boton2">
-                <button onclick="editaElementoEnLista('EditaUnPendiente');">Edit Pending</button>
+                <button onclick="editaElementoEnLista('EditaUnPendiente'); reproducirClick();">Edit Pending</button>
             </div>
         </article>
         <article class="Formulario1" id="EditaDiasDePago">
             <div class="Boton1">
-                <button onclick="_MyPaymentDay();">Return</button>
+                <button onclick="_MyPaymentDay(); reproducirClick();">Return</button>
             </div>
             <h3>Edit Payment Days</h3>
             <form>
@@ -560,7 +560,7 @@
             </form>
             <span class="DescripcionTotal">Note: Write 31 On Second Payment Day To Indicate The Last Day Of The Month</span>
             <div class="Boton2">
-                <button onclick="editaElementoEnLista('EditaDiasDePago');">Edit Payment Days</button>
+                <button onclick="editaElementoEnLista('EditaDiasDePago'); reproducirClick();">Edit Payment Days</button>
             </div>
         </article>
     </section>
@@ -583,10 +583,10 @@
     <!-- Botones Fijos -->
     <section id="BotonesFijos">
         <article>
-            <button id="BotonAbout" onclick="_aboutApp();"><img src="./Imagenes/about.png" alt="About"></button>
+            <button id="BotonAbout" onclick="_aboutApp(); reproducirClick();"><img src="./Imagenes/about.png" alt="About"></button>
         </article>
         <article>
-            <button id="BotonHome" onclick="_homeApp();"><img src="./Imagenes/Home.png" alt="About"></button>
+            <button id="BotonHome" onclick="_homeApp(); reproducirClick();"><img src="./Imagenes/Home.png" alt="About"></button>
         </article>
     </section>
     <footer></footer>
@@ -595,5 +595,6 @@
     <script src="./JavaScript/Validaciones/ValidacionCampos.js"></script>
     <script src="./JavaScript/MovimientosDinero/MovimientosDinero.js"></script>
     <script src="./JavaScript/Listas/MovimientosListas.js"></script>
+    <script src="./JavaScript/Audio/ReproducirAudio.js"></script>
 </body>
 </html>

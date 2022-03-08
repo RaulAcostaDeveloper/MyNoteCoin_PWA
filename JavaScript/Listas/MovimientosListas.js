@@ -429,10 +429,10 @@ function jsonElementoEnListaJSX(nombreImagen, tituloElemento, cantidadElemento, 
         </div>
         <div class="botonesEditarYBorrar">
             <div>
-                <button onclick="${funcion_Edita}(); limpiarForm('${idFormularioEditar}'); seleccionarElemento('${nombreLista}','${idElemento}');"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                <button onclick="${funcion_Edita}(); limpiarForm('${idFormularioEditar}'); seleccionarElemento('${nombreLista}','${idElemento}'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
             </div>
             <div>
-                <button onclick="_EliminarElemento('${idElemento}'); seleccionarElemento('${nombreLista}','${idElemento}'); eliminarElementoEnLista();"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
+                <button onclick="_EliminarElemento('${idElemento}'); seleccionarElemento('${nombreLista}','${idElemento}'); eliminarElementoEnLista(); reproducirPop();"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
             </div>
         </div>
     </div>
