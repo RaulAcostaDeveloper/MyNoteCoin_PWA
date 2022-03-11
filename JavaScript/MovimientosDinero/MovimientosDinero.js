@@ -1,5 +1,5 @@
 // Las listas (array) están en el archivo MovimientosListas.js
-let myCash = 850; //Local Storage
+let myCash = enviaDataLocalStorage('myCashLocalStorage');
 let totalDinero = 0;
 let totalGastos = 0;
 let totalRemaining = 0;
@@ -12,6 +12,8 @@ setTimeout(() => {
 
 function actualizarMyCash(){
     myCash = document.getElementById('MyCashId').value;
+    actualizaElementoLocalStorage('myCashLocalStorage', myCash);
+    calculaCantidades();
     actualizarVistaCantidadesInicio();
 }
 function calculaCantidades(){

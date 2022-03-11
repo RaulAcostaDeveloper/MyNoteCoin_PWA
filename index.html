@@ -21,7 +21,15 @@
     <link rel="stylesheet" href="./Css/About.css">
     <link rel="stylesheet" href="./Css/TransicionDesaparecer.css">
     <!-- Scripts Inicio-->
+    <script src="./JavaScript/RegistroServiceWorker.js"></script>
+    <script src="./JavaScript/RedirectHTTPS.js"></script>
     <script src="./JavaScript/ManejoDePantallas/Transicion.js"></script>
+    <script src="./JavaScript/LocalStorage.js"></script>
+    <!-- ios support -->
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="rgb(1, 113, 189)" />
+    <meta name="apple-mobile-web-app-status-bar" content="rgb(1, 113, 189)" />
+    <link rel="apple-touch-icon" href="./Imagenes/iconos/maskable_icon_x96.png"/>
 
 </head>
 
@@ -40,7 +48,7 @@
 
 <body>
 
-    <header>
+    <header onclick="copyToClipBoard('https://mynotecoin.com')" title="Copy https://mynotecoin.com">
         <h1>MyNoteCoin</h1>
     </header>
 
@@ -48,21 +56,21 @@
     <section id="Principal">
         <article id="CantidadesInicio">
             <div id="CantidadesArriba">
-                <div class="ContenedorCantidadArriba">
+                <div class="ContenedorCantidadArriba" title="Total of your money">
                     <div class="CantidadArriba">
                         <span>$</span>
                         <span id="CantidadMyTotal">000</span>
                     </div>
                     <span class="DescripcionCantidad">My Total</span>
                 </div>
-                <div class="ContenedorCantidadArriba">
+                <div class="ContenedorCantidadArriba" title="The money that you can spend">
                     <div class="CantidadArriba">
                         <span>$</span>
                         <span id="CantidadMyRemaining">000</span>
                     </div>
                     <span class="DescripcionCantidad">My Remaining</span>
                 </div>
-                <div class="ContenedorCantidadArriba">
+                <div class="ContenedorCantidadArriba" title="The money that you can use safely today">
                     <div class="CantidadArriba">
                         <span>$</span>
                         <span id="CantidadMySafeSpendForToday">000</span>
@@ -70,7 +78,7 @@
                     <span class="DescripcionCantidad">My Safe Spend For Today</span>
                 </div>
             </div>
-            <div id="CantidadMyCash">
+            <div id="CantidadMyCash" title="Insert your cash to calculate amounts">
                 <div class="CantidadAbajo">
                     <span>$</span>
                     <!-- Ignorar este error en  onkeypress="return , porque si funciona-->
@@ -81,7 +89,7 @@
         </article>
 
         <article id="BotonesInicioNavegacion">
-            <div class="BotonInicioElementoEnLista" onclick="_mySpendOnWeek(); reproducirClick();">
+            <div class="BotonInicioElementoEnLista" onclick="_mySpendOnWeek(); reproducirClick();" title="The money that you will spend each day of the week">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/semana.png" alt="Shedule">
                 </div>
@@ -89,7 +97,7 @@
                     <span>My Spend On Week</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyExpenses(); reproducirClick();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyExpenses(); reproducirClick();" title="The expenses that you will make soon">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/gastos.png" alt="Shedule">
                 </div>
@@ -97,7 +105,7 @@
                     <span>My Expenses</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyDebitCards(); reproducirClick()">
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebitCards(); reproducirClick()" title="The amount of money that you have in your debit cards">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/tarjetas.png" alt="Shedule">
                 </div>
@@ -105,7 +113,7 @@
                     <span>My Debit Cards</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyDebts(); reproducirClick();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebts(); reproducirClick();" title="Debts that you have to pay">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/deudas.png" alt="Shedule">
                 </div>
@@ -113,7 +121,7 @@
                     <span>My Debts</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyDebtors(); reproducirClick();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebtors(); reproducirClick();" title="People who owe you money">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/deudasafavor.png" alt="Shedule">
                 </div>
@@ -121,7 +129,7 @@
                     <span>My Debtors</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyPendings(); reproducirClick();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyPendings(); reproducirClick();" title="The expenses that you will make someday">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/gastosfuturos.png" alt="Shedule">
                 </div>
@@ -129,7 +137,7 @@
                     <span>My Pendings</span>
                 </div>
             </div>
-            <div class="BotonInicioElementoEnLista" onclick="_MyPaymentDay(); reproducirClick();">
+            <div class="BotonInicioElementoEnLista" onclick="_MyPaymentDay(); reproducirClick();" title="The day when you get pay, so you can know how much money can you spend">
                 <div class="ContenedorImagenElementoEnLista">
                     <img src="./Imagenes/Secciones/interrogation-mark.png" alt="Shedule">
                 </div>
@@ -168,7 +176,7 @@
                         </div>
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
-                        <div>
+                        <div title="Edit">
                             <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','monday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
@@ -187,7 +195,7 @@
                         </div>
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
-                        <div>
+                        <div title="Edit">
                             <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','thuesday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
@@ -206,7 +214,7 @@
                         </div>
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
-                        <div>
+                        <div title="Edit">
                             <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','wednesday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
@@ -225,7 +233,7 @@
                         </div>
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
-                        <div>
+                        <div title="Edit">
                             <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','thursday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
@@ -244,7 +252,7 @@
                         </div>
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
-                        <div>
+                        <div title="Edit">
                             <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','friday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
@@ -263,7 +271,7 @@
                         </div>
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
-                        <div>
+                        <div title="Edit">
                             <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','saturday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
@@ -282,7 +290,7 @@
                         </div>
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
-                        <div>
+                        <div title="Edit">
                             <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','sunday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
@@ -571,12 +579,13 @@
     <section id="About">
         <article id="Welcome">
             <h2>Welcome</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus provident quas aspernatur! Assumenda atque perspiciatis, numquam dolore earum placeat quae minus eius necessitatibus adipisci eos ullam ex officiis exercitationem incidunt?</p>
+            <p>This web app is made to help you to have an advanced control for your money. Insert amounts to make instant calculus to help you to manage your cash.</p>
+            <p>Please Share This Web App...! Just Copy https://mynotecoin.com and share! So you can help others to improve them economy.</p>
         </article>
         <article id="Guide">
             <h2>Guide</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptas, exercitationem laudantium cupiditate deserunt corporis atque. Doloribus fugiat neque iste maxime et adipisci provident, laboriosam pariatur, eveniet repellendus ad error!</p>
-            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/Sin título.png" alt="Guide 1"></div>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia1.png" alt="Guide 1"></div>
         </article>
         <article id="AboutUs">
             <h2>About Us</h2>
@@ -585,19 +594,19 @@
     </section>
     <!-- Botones Fijos -->
     <section id="BotonesFijos">
-        <article>
+        <article title="Go to the information page">
             <button id="BotonAbout" onclick="_aboutApp(); reproducirClick();"><img src="./Imagenes/about.png" alt="About"></button>
         </article>
-        <article>
+        <article title="Go to the App">
             <button id="BotonHome" onclick="_homeApp(); reproducirClick();"><img src="./Imagenes/Home.png" alt="About"></button>
         </article>
     </section>
     <footer></footer>
     <!-- Scripts Final -->
     <script src="./JavaScript/ManejoDePantallas/ManejoDePantallas.js"></script>
-    <script src="./JavaScript/Listas/MovimientosListas.js"></script>
     <script src="./JavaScript/Validaciones/ValidacionCampos.js"></script>
     <script src="./JavaScript/MovimientosDinero/MovimientosDinero.js"></script>
+    <script src="./JavaScript/Listas/MovimientosListas.js"></script>
     <script src="./JavaScript/Audio/ReproducirAudio.js"></script>
 </body>
 </html>

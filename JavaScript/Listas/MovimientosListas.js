@@ -1,27 +1,19 @@
 // Listas
 // Pendiente traer valores de Local Storage
-let listaSemana = {
-    monday:0,
-    thuesday:0,
-    wednesday:0,
-    thursday:0,
-    friday:0,
-    saturday:0,
-    sunday:0
-};
+let listaSemana = enviaDataLocalStorage('listaSemanaLocalStorage');
 // tituloElemento: inputElement[0].value,
 // cantidadElemento:inputElement[0].value,
 // idElemento: 'debtors'+idDebtors
-let expenses = [];
-let idExpenses = 0;
-let debitCards = [];
-let idDebitCards = 0;
-let debts = [];
-let idDebts = 0;
-let debtors = [];
-let idDebtors = 0;
-let pendings = [];
-let idPendings = 0;
+let expenses = enviaDataLocalStorage('expensesLocalStorage');
+let idExpenses = enviaDataLocalStorage('idExpensesLocalStorage');
+let debitCards = enviaDataLocalStorage('debitCardsLocalStorage');
+let idDebitCards = enviaDataLocalStorage('idDebitCardsLocalStorage');
+let debts = enviaDataLocalStorage('debtsLocalStorage');
+let idDebts = enviaDataLocalStorage('idDebtsLocalStorage');
+let debtors = enviaDataLocalStorage('debtorsLocalStorage');
+let idDebtors = enviaDataLocalStorage('idDebtorsLocalStorage');
+let pendings = enviaDataLocalStorage('pendingsLocalStorage');
+let idPendings = enviaDataLocalStorage('idPendingsLocalStorage');
 let paymentDays = {
     firstPaymentDay:15,
     secondPaymentDay:31
@@ -36,7 +28,6 @@ let diasRestantesQuincena = calculaDiasRestantesParaQuincena();
 // Inicio de aplicación
 // Que tarde .300 seg para que de tiempo de cargar todas las funciones usadas
 setTimeout(() => {
-    aniadirElementosDePruebaAListas(); //Aquí
     actualizarListasYMostrarTotalListas();
 }, 300);
 
@@ -117,7 +108,6 @@ function aniadirElementoALista(formularioUsado){
         return false;
     }
 
-
     switch (seleccionElemento.tipoLista) {
         case 'expenses':
             idExpenses++;
@@ -127,6 +117,7 @@ function aniadirElementoALista(formularioUsado){
                 idElemento: 'expenses'+idExpenses
             });
             console.log(expenses);
+            actualizaElementoLocalStorage('expensesLocalStorage', expenses);
             actualizarLista('expenses');
             mostrarTotal('expenses');
             _MyExpenses();//De ManejoDePantallas.js
@@ -139,6 +130,7 @@ function aniadirElementoALista(formularioUsado){
                 idElemento: 'debitCards'+idDebitCards
             });
             console.log(debitCards);
+            actualizaElementoLocalStorage('debitCardsLocalStorage', debitCards);
             actualizarLista('debitCards');
             mostrarTotal('debitCards');
             _MyDebitCards();//De ManejoDePantallas.js
@@ -151,6 +143,7 @@ function aniadirElementoALista(formularioUsado){
                 idElemento: 'debts'+idDebts
             });
             console.log(debts);
+            actualizaElementoLocalStorage('debtsLocalStorage', debts);
             actualizarLista('debts');
             mostrarTotal('debts');
             _MyDebts();//De ManejoDePantallas.js
@@ -163,6 +156,7 @@ function aniadirElementoALista(formularioUsado){
                 idElemento: 'debtors'+idDebtors
             });
             console.log(debtors);
+            actualizaElementoLocalStorage('debtorsLocalStorage', debtors);
             actualizarLista('debtors');
             mostrarTotal('debtors');
             _MyDebtors();//De ManejoDePantallas.js
@@ -175,6 +169,7 @@ function aniadirElementoALista(formularioUsado){
                 idElemento: 'pendings'+idPendings
             });
             console.log(pendings);
+            actualizaElementoLocalStorage('pendingsLocalStorage', pendings);
             actualizarLista('pendings');
             mostrarTotal('pendings');
             _MyPendings();//De ManejoDePantallas.js
@@ -217,7 +212,6 @@ function editaElementoEnLista(formularioUsado){
         console.log('Debe introducir una Cantidad');
         return false;
     }    
-
     //Para usarlo dentro del Switch;
     let indexElemento;
     switch (seleccionElemento.tipoLista) {
@@ -227,9 +221,9 @@ function editaElementoEnLista(formularioUsado){
                     // Al elemento de la lista le asigna el valor del input
                     listaSemana.monday = inputElement[0].value;
                     break;
-                case 'thuesday':
-                    listaSemana.thuesday = inputElement[0].value;
-                    break;
+                    case 'thuesday':
+                        listaSemana.thuesday = inputElement[0].value;
+                        break;
                 case 'wednesday':
                     listaSemana.wednesday = inputElement[0].value;
                     break;
@@ -250,6 +244,7 @@ function editaElementoEnLista(formularioUsado){
             }
             // Cuando edita un valor en cualquiér lista, hay que actualizar y calcular total
             console.log(listaSemana);
+            actualizaElementoLocalStorage('listaSemanaLocalStorage', listaSemana);
             actualizarLista('listaSemana');
             mostrarTotal('listaSemana');
             _mySpendOnWeek();
@@ -260,6 +255,7 @@ function editaElementoEnLista(formularioUsado){
             expenses[indexElemento].tituloElemento = inputElement[0].value;
             expenses[indexElemento].cantidadElemento = inputElement[1].value;
             console.log(expenses);
+            actualizaElementoLocalStorage('expensesLocalStorage', expenses);
             actualizarLista('expenses');
             mostrarTotal('expenses');
             _MyExpenses();
@@ -269,6 +265,7 @@ function editaElementoEnLista(formularioUsado){
             debitCards[indexElemento].tituloElemento = inputElement[0].value;
             debitCards[indexElemento].cantidadElemento = inputElement[1].value;
             console.log(debitCards);
+            actualizaElementoLocalStorage('debitCardsLocalStorage', debitCards);
             actualizarLista('debitCards');
             mostrarTotal('debitCards');
             _MyDebitCards();
@@ -278,6 +275,7 @@ function editaElementoEnLista(formularioUsado){
             debts[indexElemento].tituloElemento = inputElement[0].value;
             debts[indexElemento].cantidadElemento = inputElement[1].value;
             console.log(debts);
+            actualizaElementoLocalStorage('debtsLocalStorage', debts);
             actualizarLista('debts');
             mostrarTotal('debts');
             _MyDebts();
@@ -287,6 +285,7 @@ function editaElementoEnLista(formularioUsado){
             debtors[indexElemento].tituloElemento = inputElement[0].value;
             debtors[indexElemento].cantidadElemento = inputElement[1].value;
             console.log(debtors);
+            actualizaElementoLocalStorage('debtorsLocalStorage', debtors);
             actualizarLista('debtors');
             mostrarTotal('debtors');
             _MyDebtors();
@@ -296,28 +295,10 @@ function editaElementoEnLista(formularioUsado){
             pendings[indexElemento].tituloElemento = inputElement[0].value;
             pendings[indexElemento].cantidadElemento = inputElement[1].value;
             console.log(pendings);
+            actualizaElementoLocalStorage('pendingsLocalStorage', pendings);
             actualizarLista('pendings');
             mostrarTotal('pendings');
             _MyPendings();
-            break;
-        case 'paymentDays':
-            console.log('Edita pament days');
-            paymentDays.firstPaymentDay = inputElement[0].value;
-            // Un mes se divide en dos pagos
-            if (inputElement[0].value>15) {
-                paymentDays.firstPaymentDay = 15;
-            } else {
-                paymentDays.firstPaymentDay = inputElement[0].value;
-            }
-            if (inputElement[1].value>31) {
-                paymentDays.secondPaymentDay = 31;
-            } else {
-                paymentDays.secondPaymentDay = inputElement[1].value;
-            }
-            console.log(paymentDays);
-            actualizarLista('paymentDays');
-            mostrarTotal('paymentDays');
-            _MyPaymentDay();
             break;
         default:
             break;
@@ -333,6 +314,7 @@ function eliminarElementoEnLista(){
             // Borra un objeto de la lista, cuyo id es el que obtiene de la función encontrarElementoEnLista();
             // El SetTimeOut es para que de tiempo a la animación de aparecer
             expenses.splice(encontrarElementoEnLista(expenses),1);
+            actualizaElementoLocalStorage('expensesLocalStorage', expenses);
             setTimeout(() => {
                 actualizarLista('expenses');
                 mostrarTotal('expenses');
@@ -340,6 +322,7 @@ function eliminarElementoEnLista(){
             break;
         case 'debitCards':
             debitCards.splice(encontrarElementoEnLista(debitCards),1);
+            actualizaElementoLocalStorage('debitCardsLocalStorage', debitCards);
             setTimeout(() => {
                 actualizarLista('debitCards');
                 mostrarTotal('debitCards');
@@ -347,6 +330,7 @@ function eliminarElementoEnLista(){
             break;
         case 'debts':
             debts.splice(encontrarElementoEnLista(debts),1);
+            actualizaElementoLocalStorage('debtsLocalStorage', debts);
             setTimeout(() => {
                 actualizarLista('debts');
                 mostrarTotal('debts');
@@ -354,6 +338,7 @@ function eliminarElementoEnLista(){
             break;
         case 'debtors':
             debtors.splice(encontrarElementoEnLista(debtors),1);
+            actualizaElementoLocalStorage('debtorsLocalStorage', debtors);
             setTimeout(() => {
                 actualizarLista('debtors');
                 mostrarTotal('debtors');
@@ -361,6 +346,7 @@ function eliminarElementoEnLista(){
             break;
         case 'pendings':
             pendings.splice(encontrarElementoEnLista(pendings),1);
+            actualizaElementoLocalStorage('pendingsLocalStorage', pendings);
             setTimeout(() => {
                 actualizarLista('pendings');
                 mostrarTotal('pendings');
@@ -460,10 +446,10 @@ function jsonElementoEnListaJSX(nombreImagen, tituloElemento, cantidadElemento, 
             </div>
         </div>
         <div class="botonesEditarYBorrar">
-            <div>
+            <div title="Edit">
                 <button onclick="${funcion_Edita}(); limpiarForm('${idFormularioEditar}'); seleccionarElemento('${nombreLista}','${idElemento}'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
             </div>
-            <div>
+            <div title="Delete">
                 <button onclick="_EliminarElemento('${idElemento}'); seleccionarElemento('${nombreLista}','${idElemento}'); eliminarElementoEnLista(); reproducirPop();"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>
             </div>
         </div>
