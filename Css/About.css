@@ -5,10 +5,13 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#About h2{
+#About h2, #About h3{
     width: 100%;
     text-align: center;
     color: white;
+}
+#About h3{
+    margin-top: 20px;
 }
 #About p{
     color: rgb(215, 255, 255);
@@ -34,7 +37,12 @@ box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
     #About h2{
     font-size: 30px;
     }
+    #About h3{
+        font-size: 20px;
+    }
     #About p{
+        width: 70%;
+
         font-size: 20px;
     }
     #About .ContenedorImagenAbout img{

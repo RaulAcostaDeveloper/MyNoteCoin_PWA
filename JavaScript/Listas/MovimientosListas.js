@@ -18,6 +18,96 @@ let paymentDays = {
     firstPaymentDay:15,
     secondPaymentDay:31
 };
+// Gets Como en Java...
+function getArray(array,id){
+    // Se le pasa el nombre del array
+    switch (array) {
+        case 'listaSemana':
+            if (id) {
+                switch (id) {
+                    case 'monday':
+                    // Al elemento de la lista le asigna el valor del input
+                        return listaSemana.monday;
+                    case 'thuesday':
+                        return listaSemana.thuesday;
+                    case 'wednesday':
+                        return listaSemana.wednesday;
+                    case 'thursday':
+                        return listaSemana.thursday;
+                    case 'friday':
+                        return listaSemana.friday;
+                    case 'saturday':
+                        return listaSemana.saturday;
+                    case 'sunday':
+                        return listaSemana.sunday;
+                    default:
+                        console.log('No se encontró ' + id + " en " + array);
+                        break;
+                }
+            }else {
+                return listaSemana;
+            }
+            break;
+        case 'expenses':
+            if (id) {
+                for (let index = 0; index < expenses.length; index++) {
+                    if (expenses[index].idElemento == id) {
+                        return expenses[index];
+                    }
+                }
+            }else {
+                return expenses;
+            }
+            break;
+        case 'debitCards':
+            if (id) {
+                for (let index = 0; index < debitCards.length; index++) {
+                    if (debitCards[index].idElemento == id) {
+                        return debitCards[index];
+                    }
+                }
+            }else {
+                return debitCards;
+            }
+            break;
+        case 'debts':
+            if (id) {
+                for (let index = 0; index < debts.length; index++) {
+                    if (debts[index].idElemento == id) {
+                        return debts[index];
+                    }
+                }
+            }else {
+                return debts;
+            }
+            break;
+        case 'debtors':
+            if (id) {
+                for (let index = 0; index < debtors.length; index++) {
+                    if (debtors[index].idElemento == id) {
+                        return debtors[index];
+                    }
+                }
+            }else {
+                return debtors;
+            }
+            break;
+        case 'pendings':
+            if (id) {
+                for (let index = 0; index < pendings.length; index++) {
+                    if (pendings[index].idElemento == id) {
+                        return pendings[index];
+                    }
+                }
+            }else {
+                return pendings;
+            }
+            break;
+        default:
+            console.log('No se ha encontrado ' + array);
+            break;
+    }
+}
 // Objetos de contról
 let seleccionElemento = {
     tipoLista : "",
@@ -90,7 +180,6 @@ function aniadirElementosDePruebaAListas(){
 function seleccionarElemento(tipoLista, elementoLista){
     seleccionElemento.tipoLista = tipoLista;
     seleccionElemento.elementoLista = elementoLista; //El ID del elemento a editar
-    console.log('seleccionarElementos ' + seleccionElemento.tipoLista, seleccionElemento.elementoLista);
 }
 function aniadirElementoALista(formularioUsado){
     console.log(formularioUsado);
@@ -118,6 +207,7 @@ function aniadirElementoALista(formularioUsado){
             });
             console.log(expenses);
             actualizaElementoLocalStorage('expensesLocalStorage', expenses);
+            actualizaElementoLocalStorage('idExpensesLocalStorage', idExpenses);
             actualizarLista('expenses');
             mostrarTotal('expenses');
             _MyExpenses();//De ManejoDePantallas.js
@@ -131,6 +221,7 @@ function aniadirElementoALista(formularioUsado){
             });
             console.log(debitCards);
             actualizaElementoLocalStorage('debitCardsLocalStorage', debitCards);
+            actualizaElementoLocalStorage('idDebitCardsLocalStorage', idDebitCards);
             actualizarLista('debitCards');
             mostrarTotal('debitCards');
             _MyDebitCards();//De ManejoDePantallas.js
@@ -144,6 +235,7 @@ function aniadirElementoALista(formularioUsado){
             });
             console.log(debts);
             actualizaElementoLocalStorage('debtsLocalStorage', debts);
+            actualizaElementoLocalStorage('idDebtsLocalStorage', idDebts);
             actualizarLista('debts');
             mostrarTotal('debts');
             _MyDebts();//De ManejoDePantallas.js
@@ -157,6 +249,7 @@ function aniadirElementoALista(formularioUsado){
             });
             console.log(debtors);
             actualizaElementoLocalStorage('debtorsLocalStorage', debtors);
+            actualizaElementoLocalStorage('idDebtorsLocalStorage', idDebtors);
             actualizarLista('debtors');
             mostrarTotal('debtors');
             _MyDebtors();//De ManejoDePantallas.js
@@ -170,6 +263,7 @@ function aniadirElementoALista(formularioUsado){
             });
             console.log(pendings);
             actualizaElementoLocalStorage('pendingsLocalStorage', pendings);
+            actualizaElementoLocalStorage('idPendingsLocalStorage', idPendings);
             actualizarLista('pendings');
             mostrarTotal('pendings');
             _MyPendings();//De ManejoDePantallas.js
@@ -177,14 +271,11 @@ function aniadirElementoALista(formularioUsado){
         default:
             break;
     }
-    
-    console.log('Valores Nuevos: ' + inputElement[0].value + " " + inputElement[1].value);
-    // Al añadir, editar o borrar un elemento, es necesario volver a calular todo
+        // Al añadir, editar o borrar un elemento, es necesario volver a calular todo
     calculaCantidades(); //De MovimientosDinero.js
     actualizarVistaCantidadesInicio(); //De MovimientosDinero.js
 }
 function editaElementoEnLista(formularioUsado){
-    console.log('formularioUsado ' + formularioUsado);
     let formulario = document.getElementById(formularioUsado);
     let formElement = formulario.querySelector('form');
     let inputElement = formElement.querySelectorAll('input');
@@ -447,7 +538,7 @@ function jsonElementoEnListaJSX(nombreImagen, tituloElemento, cantidadElemento, 
         </div>
         <div class="botonesEditarYBorrar">
             <div title="Edit">
-                <button onclick="${funcion_Edita}(); limpiarForm('${idFormularioEditar}'); seleccionarElemento('${nombreLista}','${idElemento}'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                <button onclick="${funcion_Edita}(); _mostrarForm('${idFormularioEditar}' , '${idElemento}'); seleccionarElemento('${nombreLista}','${idElemento}'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
             </div>
             <div title="Delete">
                 <button onclick="_EliminarElemento('${idElemento}'); seleccionarElemento('${nombreLista}','${idElemento}'); eliminarElementoEnLista(); reproducirPop();"><img src="./Imagenes/Eliminar.png" alt="Delete"></button>

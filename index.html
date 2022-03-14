@@ -177,7 +177,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div title="Edit">
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','monday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','monday'); seleccionarElemento('listaSemana','monday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div title="Edit">
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','thuesday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','thuesday'); seleccionarElemento('listaSemana','thuesday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -215,7 +215,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div title="Edit">
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','wednesday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','wednesday'); seleccionarElemento('listaSemana','wednesday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -234,7 +234,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div title="Edit">
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','thursday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana();_mostrarForm('EditaUnDiaDeLaSemana','thursday'); seleccionarElemento('listaSemana','thursday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -253,7 +253,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div title="Edit">
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','friday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','friday'); seleccionarElemento('listaSemana','friday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -272,7 +272,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div title="Edit">
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','saturday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','saturday'); seleccionarElemento('listaSemana','saturday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -291,7 +291,7 @@
                     </div>
                     <div class="botonesEditarYBorrar BotonEditarSolitario">
                         <div title="Edit">
-                            <button onclick="_EditaUnDiaDeLaSemana(); limpiarForm('EditaUnDiaDeLaSemana'); seleccionarElemento('listaSemana','sunday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','sunday'); seleccionarElemento('listaSemana','sunday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Edit"></button>
                         </div>
                     </div>
                 </div>
@@ -310,7 +310,7 @@
                 <span class="DescripcionTotal">Total My Expenses</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnGasto(); limpiarForm('AniadeUnGasto'); seleccionarElemento('expenses', ''); reproducirClick();">New Expense</button>
+                <button onclick="_AniadeUnGasto(); _limpiarForm('AniadeUnGasto'); seleccionarElemento('expenses', ''); reproducirClick();">New Expense</button>
             </div>
             <!-- Lista de elementos -->
             <div class="ElementosEnLista" id="listaElementosExpenses">
@@ -329,7 +329,7 @@
                 <span class="DescripcionTotal">Total My Debit Cards</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnaTarjeta(); limpiarForm('AniadeUnaTarjeta'); seleccionarElemento('debitCards', ''); reproducirClick();">New Debit Card</button>
+                <button onclick="_AniadeUnaTarjeta(); _limpiarForm('AniadeUnaTarjeta'); seleccionarElemento('debitCards', ''); reproducirClick();">New Debit Card</button>
             </div>
             <!-- Lista de Elementos -->
             <div class="ElementosEnLista" id="listaElementosDebitCards">
@@ -348,7 +348,7 @@
                 <span class="DescripcionTotal">Total My Debts</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnaDeuda(); limpiarForm('AniadeUnaDeuda'); seleccionarElemento('debts', ''); reproducirClick();">New Debt</button>
+                <button onclick="_AniadeUnaDeuda(); _limpiarForm('AniadeUnaDeuda'); seleccionarElemento('debts', ''); reproducirClick();">New Debt</button>
             </div>
             <!-- Lista De Elementos -->
             <div class="ElementosEnLista" id="listaElementosDebts">
@@ -367,7 +367,7 @@
                 <span class="DescripcionTotal">Total My Debtors</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnDeudor(); limpiarForm('AniadeUnDeudor'); seleccionarElemento('debtors',''); reproducirClick();">New Debtor</button>
+                <button onclick="_AniadeUnDeudor(); _limpiarForm('AniadeUnDeudor'); seleccionarElemento('debtors',''); reproducirClick();">New Debtor</button>
             </div>
             <!-- Lista De Elementos -->
             <div class="ElementosEnLista" id="listaElementosDebtors">
@@ -386,7 +386,7 @@
                 <span class="DescripcionTotal">Total My Pendings</span>
             </div>
             <div class="Boton2">
-                <button onclick="_AniadeUnPendiente(); limpiarForm('AniadeUnPendiente'); seleccionarElemento('pendings',''); reproducirClick();">New Pending</button>
+                <button onclick="_AniadeUnPendiente(); _limpiarForm('AniadeUnPendiente'); seleccionarElemento('pendings',''); reproducirClick();">New Pending</button>
             </div>
             <!-- Lista De Elementos -->
             <div class="ElementosEnLista" id="listaElementosPendings">
@@ -584,8 +584,56 @@
         </article>
         <article id="Guide">
             <h2>Guide</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptas, exercitationem laudantium cupiditate deserunt corporis atque. Doloribus fugiat neque iste maxime et adipisci provident, laboriosam pariatur, eveniet repellendus ad error!</p>
+            <h3>Cash</h3>
             <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia1.png" alt="Guide 1"></div>
+            <p>Input your actually cash to manage the amount of money that you will control in the app.</p>
+            <h3>Total</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia14.png" alt="Guide 1"></div>
+            <p>Check out how much cash you have for the total. The total of cash is calculated with the cash plus the amount of money in credit cards.</p>
+            <h3>Remaining</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia15.png" alt="Guide 1"></div>
+            <p>The remaining is how much money you actually have to spend for free. The remaining is calculated with the total of cash minus the total of the expenses that you write in expenses and spend on week.</p>
+            <h3>Safe spend for today</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia16.png" alt="Guide 1"></div>
+            <p>This section is very important, because you can see how much cash you can spend for free today without guilty. It is calculated with the remaining and the amount of days that will pass until your next payment.</p>
+            <h3>Sections</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia2.png" alt="Guide 1"></div>
+            <p>You can open each section to edit your list.</p>
+            <h3>Total of each section</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia3.png" alt="Guide 1"></div>
+            <p>In each section you can see how much cash is moving there, so you can have a great control of your money.</p>
+            <h3>Element in list</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia4.png" alt="Guide 1"></div>
+            <p>Each section has his own elements. You can Add, Edit and Delete each element.</p>
+            <h3>Spend on week</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia5.png" alt="Guide 1"></div>
+            <p>In this section you can write how much money you will spend in each day, so you can have a great control for your money.</p>
+            <h3>Expenses</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia6.png" alt="Guide 1"></div>            <h3></h3>
+            <p>In this section you can create a list of expenses, so you will remind what for and how much you have to apart for these expenses.</p>
+            <h3>Debit cards</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia7.png" alt="Guide 1"></div>            <h3></h3>
+            <p>In this section you can create a list for your credit cards. So you will see and remind how much cash you have.</p>
+            <h3>Debts</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia8.png" alt="Guide 1"></div>            <h3></h3>
+            <p>In this section you can create a list for your debts. These debts will not affect the cash.</p>
+            <h3>Debtors</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia9.png" alt="Guide 1"></div>            <h3></h3>
+            <p>In this section you can create a list for debtors. That means that you will remind people who debt you money. These debts will not affect the cash.</p>
+            <h3>Pendings</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia10.png" alt="Guide 1"></div>
+            <p>This section is for expenses that you will make in future. It works like a to do list or an expenses list, and will not affect your cash.</p>
+            <h3>Payment day</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia11.png" alt="Guide 1"></div>
+            <p>In this section you can see how many days will take until your next payment day. The days remaining are used to calculate how much money you can use for free each day until you get pay, so you will never run out of money.</p>
+            <p>Is build thinking on payment day as each fortnight.</p>
+            <h3>Information section</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia12.png" alt="Guide 1"></div>
+            <p>You can go to information section just clicking on this button.</p>
+            <h3>Home section</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia13.png" alt="Guide 1"></div>
+            <p>You can go to the principal page of the app just clicking on this button.</p>
+
         </article>
         <article id="AboutUs">
             <h2>About Us</h2>

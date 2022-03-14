@@ -374,3 +374,46 @@ function _EliminarElemento(elemento){
     let elementoDesaparecer = document.getElementById(elemento);
     _desaparecer(elementoDesaparecer);
 }
+// Limpiar Form
+function _limpiarForm(ID){
+    let formulario = document.getElementById(ID);
+    let formElement = formulario.querySelector('form');
+    let inputElement = formElement.querySelectorAll('input');
+    for (let index = 0; index < inputElement.length; index++) {
+        inputElement[index].value = "";
+    }
+}
+// Mostrar Form
+function _mostrarForm(idForm, idElemento){
+    // Quiero que en el form se muestren los datos del elemento que se va a editar
+    let formulario = document.getElementById(idForm);
+    let formElement = formulario.querySelector('form');
+    let inputElement = formElement.querySelectorAll('input');
+    switch (idForm) {
+        case 'EditaUnDiaDeLaSemana':
+            inputElement[0].value = getArray('listaSemana', idElemento);
+            break;
+        case 'EditaUnGasto':
+            inputElement[0].value = getArray('expenses', idElemento).tituloElemento;
+            inputElement[1].value = getArray('expenses', idElemento).cantidadElemento;
+            break;
+        case 'EditaUnaTarjeta':
+            inputElement[0].value = getArray('debitCards', idElemento).tituloElemento;
+            inputElement[1].value = getArray('debitCards', idElemento).cantidadElemento;
+            break;
+        case 'EditaUnaDeuda':
+            inputElement[0].value = getArray('debts', idElemento).tituloElemento;
+            inputElement[1].value = getArray('debts', idElemento).cantidadElemento;
+            break;
+        case 'EditaUnDeudor':
+            inputElement[0].value = getArray('debtors', idElemento).tituloElemento;
+            inputElement[1].value = getArray('debtors', idElemento).cantidadElemento;
+            break;
+        case 'EditaUnPendiente':
+            inputElement[0].value = getArray('pendings', idElemento).tituloElemento;
+            inputElement[1].value = getArray('pendings', idElemento).cantidadElemento;
+            break;
+        default:
+            break;
+    }
+}

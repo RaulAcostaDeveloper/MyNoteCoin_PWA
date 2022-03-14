@@ -22,15 +22,6 @@ function valideKey(evt){
     }
  }
 
- function limpiarForm(ID){
-    let formulario = document.getElementById(ID);
-    let formElement = formulario.querySelector('form');
-    let inputElement = formElement.querySelectorAll('input');
-    for (let index = 0; index < inputElement.length; index++) {
-        inputElement[index].value = "";
-    }
-}
-
 function validarCampoVacio(campoId){
   let elementoInput = document.getElementById(campoId);
   if(elementoInput.value.length < 1){

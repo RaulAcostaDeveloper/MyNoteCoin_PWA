@@ -9,7 +9,7 @@ if (window.location.host == "mynotecoin.com") {
 function copyToClipBoard(enlace) {
   navigator.clipboard.writeText(enlace)
       .then(() => {
-      console.log("Text copied to clipboard...")
+      console.log("Text copied "+ enlace + " to clipboard...")
   })
       .catch(err => {
       console.log('Something went wrong', err);
