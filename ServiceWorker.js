@@ -7,6 +7,8 @@ const ASSETS = [
     "./ServiceWorker.js",
     "./Audios/click.mp3",
     "./Audios/pop.mp3",
+    "./Audios/money.mp3",
+
     "./Css/About.css",
     "./Css/BotonesInicioNavegacion.css",
     "./Css/CantidadesInicio.css",
@@ -20,7 +22,8 @@ const ASSETS = [
     "./Css/Formularios/FormulariosGlobal.css",
     "./Css/Secciones/ElementoEnLista.css",
     "./Css/Secciones/SeccionesGlobal.css",
- 
+    "./Css/ImagenInicioAplicacion.css",
+
     "./Imagenes/about.png",
     "./Imagenes/editar-documento.png",
     "./Imagenes/Eliminar.png",

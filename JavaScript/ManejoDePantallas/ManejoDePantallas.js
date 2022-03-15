@@ -7,6 +7,7 @@ let About = document.getElementById("About");
 let Formularios = document.getElementById("Formularios");
 let Secciones = document.getElementById("Secciones");
 let Principal = document.getElementById("Principal");
+let imagenInicioAplicacion = document.getElementById("imagenInicioAplicacion");
 
 // Secciones
 let MySpendOnWeek = document.getElementById("MySpendOnWeek");
@@ -32,9 +33,13 @@ let EditaUnPendiente = document.getElementById("EditaUnPendiente");
 let EditaDiasDePago = document.getElementById("EditaDiasDePago");
 
 // Inicio de la Aplicación
-_homeApp();
+_startApp();
+function _startApp(){
+    _aparecer(imagenInicioAplicacion);
+}
 
 function _homeApp(){
+    _desaparecer(imagenInicioAplicacion);
     _desaparecer(BotonHome);
     _desaparecer(About);
     _desaparecer(Secciones);
