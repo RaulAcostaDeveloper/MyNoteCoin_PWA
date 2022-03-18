@@ -5,10 +5,13 @@
     border-radius: 50%;
     position: fixed;
     cursor: pointer;
+    right: 10px;
+    bottom: 10px;
 }
 #BotonAbout img, #BotonHome img{
     width: 100%;
     height: 100%;
+    border-radius: 50%;
 }
 #BotonAbout:hover,#BotonAbout:active, #BotonHome:hover, #BotonHome:active{
     -webkit-box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 75%);
@@ -17,14 +20,14 @@
     transition: 0.1s;
 }
 /* Posición */
-#BotonAbout{
+/* #BotonAbout{
     right: 10px;
     bottom: 10px;
 }
 #BotonHome{
     left: 10px;
     bottom: 10px;
-}
+} */
 @media screen and (min-width: 768px){
     #BotonAbout, #BotonHome{
         width: 60px;

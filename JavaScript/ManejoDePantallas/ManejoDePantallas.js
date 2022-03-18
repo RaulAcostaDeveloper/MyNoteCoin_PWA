@@ -30,7 +30,6 @@ let AniadeUnDeudor = document.getElementById("AniadeUnDeudor");
 let EditaUnDeudor = document.getElementById("EditaUnDeudor");
 let AniadeUnPendiente = document.getElementById("AniadeUnPendiente");
 let EditaUnPendiente = document.getElementById("EditaUnPendiente");
-let EditaDiasDePago = document.getElementById("EditaDiasDePago");
 
 // Inicio de la Aplicación
 _startApp();
@@ -172,8 +171,6 @@ function _EditaUnDiaDeLaSemana(){
     _desaparecer(EditaUnDeudor);
     _desaparecer(AniadeUnPendiente);
     _desaparecer(EditaUnPendiente);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(EditaUnDiaDeLaSemana);
 }
 function _AniadeUnGasto(){
@@ -190,8 +187,6 @@ function _AniadeUnGasto(){
     _desaparecer(EditaUnDeudor);
     _desaparecer(AniadeUnPendiente);
     _desaparecer(EditaUnPendiente);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(AniadeUnGasto);
 }
 function _EditaUnGasto(){
@@ -208,8 +203,6 @@ function _EditaUnGasto(){
     _desaparecer(EditaUnDeudor);
     _desaparecer(AniadeUnPendiente);
     _desaparecer(EditaUnPendiente);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(EditaUnGasto);
 }
 function _AniadeUnaTarjeta(){
@@ -226,8 +219,6 @@ function _AniadeUnaTarjeta(){
     _desaparecer(EditaUnDeudor);
     _desaparecer(AniadeUnPendiente);
     _desaparecer(EditaUnPendiente);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(AniadeUnaTarjeta);
 }
 function _EditaUnaTarjeta(){
@@ -244,8 +235,6 @@ function _EditaUnaTarjeta(){
     _desaparecer(EditaUnDeudor);
     _desaparecer(AniadeUnPendiente);
     _desaparecer(EditaUnPendiente);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(EditaUnaTarjeta);
 }
 function _AniadeUnaDeuda(){
@@ -262,8 +251,6 @@ function _AniadeUnaDeuda(){
     _desaparecer(EditaUnDeudor);
     _desaparecer(AniadeUnPendiente);
     _desaparecer(EditaUnPendiente);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(AniadeUnaDeuda);
 }
 function _EditaUnaDeuda(){
@@ -280,8 +267,6 @@ function _EditaUnaDeuda(){
     _desaparecer(EditaUnaTarjeta);
     _desaparecer(AniadeUnPendiente);
     _desaparecer(EditaUnPendiente);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(EditaUnaDeuda);
 }
 function _AniadeUnDeudor(){
@@ -298,8 +283,6 @@ function _AniadeUnDeudor(){
     _desaparecer(EditaUnDeudor);
     _desaparecer(AniadeUnPendiente);
     _desaparecer(EditaUnPendiente);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(AniadeUnDeudor);
 }
 function _EditaUnDeudor(){
@@ -316,8 +299,6 @@ function _EditaUnDeudor(){
     _desaparecer(EditaUnaTarjeta);
     _desaparecer(AniadeUnPendiente);
     _desaparecer(EditaUnPendiente);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(EditaUnDeudor);
 }
 function _AniadeUnPendiente(){
@@ -334,8 +315,6 @@ function _AniadeUnPendiente(){
     _desaparecer(EditaUnDeudor);
     _desaparecer(AniadeUnDeudor);
     _desaparecer(EditaUnPendiente);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(AniadeUnPendiente);
 }
 function _EditaUnPendiente(){
@@ -352,8 +331,6 @@ function _EditaUnPendiente(){
     _desaparecer(EditaUnaTarjeta);
     _desaparecer(AniadeUnPendiente);
     _desaparecer(EditaUnDeudor);
-    _desaparecer(EditaDiasDePago);
-
     _aparecer(EditaUnPendiente);
 }
 function _EditaDiasDePago(){

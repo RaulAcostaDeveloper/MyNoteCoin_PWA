@@ -14,6 +14,6 @@ function copyToClipBoard(enlace) {
       .catch(err => {
       console.log('Something went wrong', err);
   })
-  alert("Thank You..!")
+  alert("MyNoteCoin!");
 }
 registroServiceWorker();

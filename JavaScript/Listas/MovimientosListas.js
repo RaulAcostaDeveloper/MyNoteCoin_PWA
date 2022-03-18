@@ -188,11 +188,11 @@ function aniadirElementoALista(formularioUsado){
     let inputElement = formElement.querySelectorAll('input');
 
     if ( inputElement[0].value.length == 0 ) {
-        alert("You must introduce a Title");
+        alert("Debe introducir un Titulo");
         console.log('Debe introducir un Titulo');
         return false;
     } else if (inputElement[1].value.length == 0) {
-        alert("You must introduce an Amount");
+        alert("Debe introducir una Cantidad");
         console.log('Debe introducir una Cantidad');
         return false;
     }
