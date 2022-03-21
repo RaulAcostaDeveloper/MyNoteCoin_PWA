@@ -16,6 +16,24 @@ header{
 a{
     color: rgb(255, 176, 6);
 }
+.publicidad{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.publicidad iframe:hover{
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    transition: 0.8s;
+}
+.publicidad a:hover{
+    font-size: 20px;
+    transition: 1s;
+}
 footer{
     min-height: 100px;
 }

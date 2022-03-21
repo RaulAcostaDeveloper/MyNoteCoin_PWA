@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--   
+     _____         __  _                         _        
+    |  __ \       /_/ | |     /\                | |       
+    | |__) |__ _ _   _| |    /  \   ___ ___  ___| |_ __ _ 
+    |  _  // _` | | | | |   / /\ \ / __/ _ \/ __| __/ _` |
+    | | \ \ (_| | |_| | |  / ____ \ (_| (_) \__ \ || (_| |
+    |_|  \_\__,_|\__,_|_| /_/    \_\___\___/|___/\__\__,_|
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content=",administra,administracion,administración,administracion de cartera digital,administracion de dinero,administracion de gastos
+    ,admob,adsense,Android,aplicacion,aplicación,aplicacion basada en el navegador,aplicación control de gastos,aplicacion de dinero
+    ,aplicación de efectivo,aplicacion de finanzas,aplicación financiera,aplicacion hibrida,aplicación hibrida,aplicación segura
+    ,aplicacion web,aplicación web,aplicacion web progresiva,aplicación web progresiva,aplicaciones,aplicaciones,aplicaciones gratis
+    ,aplicaciones para,aplicaciones para administrar dinero,aplicaciones para dinero,aplicaciones web,aplicaciones web,app control de gastos
+    ,app para control de gastos,app para control de gastos personales,app para llevar control de gastos,aprovechamiento
+    ,bienvenida,bienvenido,botones de control,botones dinero,cartera digital,como llevar un control de gastos,como realizar el control de tus gastos
+    ,contabilidad,Control,control de gastos,control de gastos en excel,control de gastos excel,control de gastos personales
+    ,control de gastos personales excel,control de ingresos,control financiero,control quincenal,debito,Desktop,dias de pago
+    ,dinero,dinero efectivo,disenio responsivo,diseño responsivo,efectivo,el dinero,en efectivo,escritorio,espaniol,español
+    ,financieros,finanzas,gastar dinero,gasto,gastos,gastos personales,gastos seguros,guia de uso,guide,how to safe money
+    ,iconos,ingresos,instalacion,instalar,IOS,javascript,java-script,javascript cache,lista de dinero,lista de efectivo,lista de gastos
+    ,listas,listas de control,listas de gastos,manejar dinero por internet,manejo de dinero,manejo de efectivo,manifest
+    ,mi aplicación de efectivo,mi dinero,mi efectivo,monedas,money,no tengo dinero,operaciones bancarias,pagina web,pagina web
+    ,pagos,plantilla excel control de gastos,presupuesto,produccion,producción,productivo,publicidad,que es aplicación,que es aplicación web
+    ,que es dinero,quincena,quincenas,resultados,secciones,seguridad,seguro,sitio web,soporte de ios,tarjeta de debito,tarjetas">
+    <meta name="description" content="Esta aplicacion web esta hecha para ayudarte a tener un control avanzado de dinero, manejar mas eficientemente tus ingresos. Ingresa cantidades para hacer calculos instantaneos y ayudarte a manejar el flujo del dinero efectivo.">
+    <title>Mi Control de Gastos</title>
+    <link rel="shortcut icon" href="./Imagenes/Iconos/maskable_icon_x128.ico">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./Css/global.css">
+    <link rel="stylesheet" href="./Css/CantidadesInicio.css">
+    <link rel="stylesheet" href="./Css/BotonesInicioNavegacion.css">
+    <link rel="stylesheet" href="./Css/Botones/Boton1.css">
+    <link rel="stylesheet" href="./Css/Botones/Boton2.css">
+    <link rel="stylesheet" href="./Css/Botones/BotonesFijos.css">
+    <link rel="stylesheet" href="./Css/Secciones/SeccionesGlobal.css">
+    <link rel="stylesheet" href="./Css/Secciones/ElementoEnLista.css">
+    <link rel="stylesheet" href="./Css/TotalResultadosLista.css">
+    <link rel="stylesheet" href="./Css/Formularios/FormulariosGlobal.css">
+    <link rel="stylesheet" href="./Css/Formularios/Formulario1.css">
+    <link rel="stylesheet" href="./Css/About.css">
+    <link rel="stylesheet" href="./Css/TransicionDesaparecer.css">
+    <link rel="stylesheet" href="./Css/ImagenInicioAplicacion.css">
+    <!-- Scripts Inicio-->
+    <script src="./JavaScript/RegistroServiceWorker.js"></script>
+    <script src="./JavaScript/RedirectHTTPS.js"></script>
+    <script src="./JavaScript/ManejoDePantallas/Transicion.js"></script>
+    <script src="./JavaScript/LocalStorage.js"></script>
+    <!-- ios support -->
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="rgb(1, 113, 189)" />
+    <meta name="apple-mobile-web-app-status-bar" content="rgb(1, 113, 189)" />
+    <link rel="apple-touch-icon" href="./Imagenes/Iconos/maskable_icon_x96.png"/>
+
+</head>
+
+<!-- -------------------------------------------------------------------------------------------------------------- -->
+<!-- ANALYTICS -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JD0NXZ1X86"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JD0NXZ1X86');
+</script>
+<!-- -------------------------------------------------------------------------------------------------------------- -->
+
+<body>
+
+    <header onclick="copyToClipBoard('https://mynotecoin.com')" title="Copy https://mynotecoin.com">
+        <h1>Mi Control De Gastos</h1>
+    </header>
+
+    <!-- Imagen inicio de aplicación -->
+    <section id="imagenInicioAplicacion" onclick="_homeApp(); reproducirMoney();">
+        <div id="logoInicioAplicacion">
+            <img src="./Imagenes/Iconos/maskable_icon.png" alt="Principal Logo">
+        </div>
+        <div id="clickToStart">
+            <p>Click para iniciar</p>
+        </div>
+    </section>
+    <a href="./index.html">English</a>
+
+    <!-- Principal -->
+    <section id="Principal">
+        <article id="CantidadesInicio">
+            <div id="CantidadesArriba">
+                <div class="ContenedorCantidadArriba" title="El total de tu dinero">
+                    <div class="CantidadArriba">
+                        <span>$</span>
+                        <span id="CantidadMyTotal">000</span>
+                    </div>
+                    <span class="DescripcionCantidad">Mi dinero total</span>
+                </div>
+                <div class="ContenedorCantidadArriba" title="El dinero que puedes gastar">
+                    <div class="CantidadArriba">
+                        <span>$</span>
+                        <span id="CantidadMyRemaining">000</span>
+                    </div>
+                    <span class="DescripcionCantidad">Mi dinero Restante</span>
+                </div>
+                <div class="ContenedorCantidadArriba" title="El dinero que puedes gastar hoy">
+                    <div class="CantidadArriba">
+                        <span>$</span>
+                        <span id="CantidadMySafeSpendForToday">000</span>
+                    </div>
+                    <span class="DescripcionCantidad">Mi gasto seguro de hoy</span>
+                </div>
+            </div>
+            <div id="CantidadMyCash" title="Ingresa tu efectivo para calcular cantidades">
+                <div class="CantidadAbajo">
+                    <span>$</span>
+                    <!-- Ignorar este error en  onkeypress="return , porque si funciona-->
+                    <input id="MyCashId" type="number" placeholder="000" onkeypress="return valideKey(event);" oninput="validarCampoVacio('MyCashId'); actualizarMyCash();">
+                </div>
+                <span class="DescripcionCantidad">Mi efectivo</span>
+            </div>
+        </article>
+
+        <article id="BotonesInicioNavegacion">
+            <div class="BotonInicioElementoEnLista" onclick="_mySpendOnWeek(); reproducirClick();" title="El dinero que gastarás en cada día de la semana">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/semana.png" alt="Calendario">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>Mi gasto semanal</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyExpenses(); reproducirClick();" title="Los gastos que tendrás pronto">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/gastos.png" alt="Calendario">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>Mis gastos</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebitCards(); reproducirClick()" title="La cantidad de dinero que tienes en tarjetas de débito">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/tarjetas.png" alt="Calendario">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>Mis tarjetas de débito</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebts(); reproducirClick();" title="Las deudas que debes pagar">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/deudas.png" alt="Calendario">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>Mis deudas</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyDebtors(); reproducirClick();" title="Personas que te deben dinero">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/deudasafavor.png" alt="Calendario">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>Personas que me deben</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyPendings(); reproducirClick();" title="Los gastos que planeas a futuro">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/gastosfuturos.png" alt="Calendario">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>Mis pendientes</span>
+                </div>
+            </div>
+            <div class="BotonInicioElementoEnLista" onclick="_MyPaymentDay(); reproducirClick();" title="El día que recibes tu pago, la quincena, para que sepas cuanto dinero puedes gastar por día">
+                <div class="ContenedorImagenElementoEnLista">
+                    <img src="./Imagenes/Secciones/interrogation-mark.png" alt="Calendario">
+                </div>
+                <div class="ContenedorDescripcionElementoEnLista">
+                    <span>Mi día de pago</span>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- Dentro de secciones -->
+    <section id="Secciones">
+        <article id="MySpendOnWeek">
+            <div class="Boton1">
+                <button onclick="_homeApp(); reproducirClick();">Regresar</button>
+            </div>
+            <h2>Mi gasto semanal</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span id="totalSpendOnWeek">1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total del gasto semanal</span>
+            </div>
+            <div class="ElementosEnLista">
+                <div class="ElementoEnLista" id="ElementoDayMonday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Calendario">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Lunes</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span id="monday">8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div title="editar">
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','monday'); seleccionarElemento('listaSemana','monday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Editarar"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDayThuesday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Calendario">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Martes</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span id="thuesday">8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div title="Editar">
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','thuesday'); seleccionarElemento('listaSemana','thuesday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Editarar"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDayWednesday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Calendario">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Miercoles</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span id="wednesday">8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div title="Editar">
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','wednesday'); seleccionarElemento('listaSemana','wednesday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Editar"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDayThursday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Calendario">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Jueves</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span id="thursday">8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div title="Editar">
+                            <button onclick="_EditaUnDiaDeLaSemana();_mostrarForm('EditaUnDiaDeLaSemana','thursday'); seleccionarElemento('listaSemana','thursday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Editar"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDayFriday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Calendario">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Viernes</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span id="friday">8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div title="Editar">
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','friday'); seleccionarElemento('listaSemana','friday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Editar"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDaySaturday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Calendario">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Sábado</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span id="saturday">8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div title="Editar">
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','saturday'); seleccionarElemento('listaSemana','saturday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Editar"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ElementoEnLista" id="ElementoDaySunday">
+                    <div class="ContenedorImagenPrincipalElementoEnLista">
+                        <img src="./Imagenes/Secciones/semana.png" alt="Calendario">
+                    </div>
+                    <div class="infoElementoenLista">
+                        <div class="ContenedorTituloElementoEnLista">
+                            <span>Domingo</span>
+                        </div>
+                        <div class="ContenedorCantidadElementoEnLista">
+                            <span>$</span>
+                            <span id="sunday">8992.50</span>
+                        </div>
+                    </div>
+                    <div class="botonesEditarYBorrar BotonEditarSolitario">
+                        <div title="Editar">
+                            <button onclick="_EditaUnDiaDeLaSemana(); _mostrarForm('EditaUnDiaDeLaSemana','sunday'); seleccionarElemento('listaSemana','sunday'); reproducirClick();"><img src="./Imagenes/editar-documento.png" alt="Editar"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="MyExpenses">
+            <div class="Boton1">
+                <button onclick="_homeApp(); reproducirClick();">Regresar</button>
+            </div>
+            <h2>Mis gastos</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span id="totalMyExpenses">1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total de mis gastos</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_AniadeUnGasto(); _limpiarForm('AniadeUnGasto'); seleccionarElemento('expenses', ''); reproducirClick();">Nuevo gasto</button>
+            </div>
+            <!-- Lista de elementos -->
+            <div class="ElementosEnLista" id="listaElementosExpenses">
+            </div>
+        </article>
+        <article id="MyDebitCards">
+            <div class="Boton1">
+                <button onclick="_homeApp(); reproducirClick();">Regresar</button>
+            </div>
+            <h2>Mis tarjetas de débito</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span id="totalMyDebitCards">1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total de mis tarjetas de débito</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_AniadeUnaTarjeta(); _limpiarForm('AniadeUnaTarjeta'); seleccionarElemento('debitCards', ''); reproducirClick();">Nueva tarjeta de débito</button>
+            </div>
+            <!-- Lista de Elementos -->
+            <div class="ElementosEnLista" id="listaElementosDebitCards">
+            </div>
+        </article>
+        <article id="MyDebts">
+            <div class="Boton1">
+                <button onclick="_homeApp(); reproducirClick();">Regresar</button>
+            </div>
+            <h2>Mis deudas</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span id="totalMyDebts">1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total de mis deudas</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_AniadeUnaDeuda(); _limpiarForm('AniadeUnaDeuda'); seleccionarElemento('debts', ''); reproducirClick();">Nueva deuda</button>
+            </div>
+            <!-- Lista De Elementos -->
+            <div class="ElementosEnLista" id="listaElementosDebts">
+            </div>
+        </article>
+        <article id="MyDebtors">
+            <div class="Boton1">
+                <button onclick="_homeApp(); reproducirClick();">Regresar</button>
+            </div>
+            <h2>Personas que me deben</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span id="totalMyDebtors">1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total de personas que me deben</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_AniadeUnDeudor(); _limpiarForm('AniadeUnDeudor'); seleccionarElemento('debtors',''); reproducirClick();">Nuevo deudor</button>
+            </div>
+            <!-- Lista De Elementos -->
+            <div class="ElementosEnLista" id="listaElementosDebtors">
+            </div>
+        </article>
+        <article id="MyPendings">
+            <div class="Boton1">
+                <button onclick="_homeApp(); reproducirClick();">Regresar</button>
+            </div>
+            <h2>Mis pendientes</h2>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span>$</span>
+                    <span id="totalMyPendings">1754.50</span>
+                </div>
+                <span class="DescripcionTotal">Total de mis pendientes</span>
+            </div>
+            <div class="Boton2">
+                <button onclick="_AniadeUnPendiente(); _limpiarForm('AniadeUnPendiente'); seleccionarElemento('pendings',''); reproducirClick();">Nuevo pendiente</button>
+            </div>
+            <!-- Lista De Elementos -->
+            <div class="ElementosEnLista" id="listaElementosPendings">
+            </div>
+        </article>
+        <article id="MyPaymentDay">
+            <div class="Boton1">
+                <button onclick="_homeApp(); reproducirClick();">Regresar</button>
+            </div>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span id="firstPaymentDay">15</span>
+                </div>
+                <span class="DescripcionTotal">Primer día de pago</span>
+            </div>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span id="secondPaymentDay">Último día del mes</span>
+                </div>
+                <span class="DescripcionTotal">Segundo día de pago</span>
+            </div>
+            <div class="TotalResultadosLista">
+                <div>
+                    <span id="diasRestantes"></span>
+                </div>
+                <span class="DescripcionTotal">Días restantes para quincena</span>
+            </div>
+        </article>
+    </section>
+    <!-- Formularios -->
+    <section id="Formularios">
+        <article class="Formulario1" id="EditaUnDiaDeLaSemana">
+            <div class="Boton1">
+                <button onclick="_mySpendOnWeek(); reproducirClick();">Regresar</button>
+            </div>
+            <h3>Editar un día de la semana</h3>
+            <form>
+                <input id="AmountDay" type="number" placeholder="Cantidad" onkeypress="return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="editaElementoEnLista('EditaUnDiaDeLaSemana'); reproducirClick();">Editar día</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="AniadeUnGasto">
+            <div class="Boton1">
+                <button onclick="_MyExpenses(); reproducirClick();">Regresar</button>
+            </div>
+            <h3>Añadir nuevo gasto</h3>
+            <form>
+                <input id="AddAExpenseTitle" type="text" placeholder="Título gasto">
+                <input id="AddAExpenseAmount" type="number" placeholder="Cantidad" onkeypress=" return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="aniadirElementoALista('AniadeUnGasto'); reproducirClick();">Añadir gasto</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaUnGasto">
+            <div class="Boton1">
+                <button onclick="_MyExpenses(); reproducirClick();">Regresar</button>
+            </div>
+            <h3>Editar un gasto</h3>
+            <form>
+                <input type="text" placeholder="Título gasto">
+                <input type="number" placeholder="cantidad" onkeypress="return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="editaElementoEnLista('EditaUnGasto'); reproducirClick();">Editar gasto</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="AniadeUnaTarjeta">
+            <div class="Boton1">
+                <button onclick="_MyDebitCards(); reproducirClick();">Regresar</button>
+            </div>
+            <h3>Añadir una tarjeta de débito</h3>
+            <form>
+                <input type="text" placeholder="Título tarjeta de débito">
+                <input type="number" placeholder="Cantidad" onkeypress="return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="aniadirElementoALista('AniadeUnaTarjeta'); reproducirClick();">Añadir nueva tarjeta</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaUnaTarjeta">
+            <div class="Boton1">
+                <button onclick="_MyDebitCards(); reproducirClick();">Regresar</button>
+            </div>
+            <h3>Editar una tarjeta de débito</h3>
+            <form>
+                <input type="text" placeholder="Título tarjeta de débito">
+                <input type="number" placeholder="Cantidad" onkeypress="return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="editaElementoEnLista('EditaUnaTarjeta'); reproducirClick();">Editar tarjeta</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="AniadeUnaDeuda">
+            <div class="Boton1">
+                <button onclick="_MyDebts(); reproducirClick();">Regresar</button>
+            </div>
+            <h3>Añadir nueva deuda</h3>
+            <form>
+                <input type="text" placeholder="Título deuda">
+                <input type="number" placeholder="Cantidad" onkeypress="return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="aniadirElementoALista('AniadeUnaDeuda'); reproducirClick();">Añadir deuda</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaUnaDeuda">
+            <div class="Boton1">
+                <button onclick="_MyDebts(); reproducirClick();">Regresar</button>
+            </div>
+            <h3>Editar una deuda</h3>
+            <form>
+                <input type="text" placeholder="Título deuda">
+                <input type="number" placeholder="Cantidad" onkeypress="return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="editaElementoEnLista('EditaUnaDeuda'); reproducirClick();">Editar Deuda</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="AniadeUnDeudor">
+            <div class="Boton1">
+                <button onclick="_MyDebtors();reproducirClick();">Regresar</button>
+            </div>
+            <h3>Añade nuevo deudor</h3>
+            <form>
+                <input type="text" placeholder="Nombre deudor">
+                <input type="number" placeholder="Cantidad" onkeypress="return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="aniadirElementoALista('AniadeUnDeudor'); reproducirClick();">Añade deudor</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaUnDeudor">
+            <div class="Boton1">
+                <button onclick="_MyDebtors(); reproducirClick();">Regresar</button>
+            </div>
+            <h3>Edita un deudor</h3>
+            <form>
+                <input type="text" placeholder="Nombre deudor">
+                <input type="number" placeholder="Cantidad" onkeypress="return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="editaElementoEnLista('EditaUnDeudor'); reproducirClick();">Edita deudor</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="AniadeUnPendiente">
+            <div class="Boton1">
+                <button onclick="_MyPendings(); reproducirClick();">Regresar</button>
+            </div>
+            <h3>Añade un pendiente</h3>
+            <form>
+                <input type="text" placeholder="Título pendiente">
+                <input type="number" placeholder="Cantidad" onkeypress="return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="aniadirElementoALista('AniadeUnPendiente'); reproducirClick();">Añade pendiente</button>
+            </div>
+        </article>
+        <article class="Formulario1" id="EditaUnPendiente">
+            <div class="Boton1">
+                <button onclick="_MyPendings(); reproducirClick();">Regresar</button>
+            </div>
+            <h3>Edita un pendiente</h3>
+            <form>
+                <input type="text" placeholder="Título pendiente">
+                <input type="number" placeholder="Cantidad" onkeypress="return valideKey(event);">
+            </form>
+            <div class="Boton2">
+                <button onclick="editaElementoEnLista('EditaUnPendiente'); reproducirClick();">Edita pendiente</button>
+            </div>
+        </article>
+    </section>
+    <!-- About (Welcome) -->
+    <section id="About">
+        <article id="Welcome">
+            <h2>Bienvenido</h2>
+            <p>Esta aplicación web está hecha para ayudarte a tener un mejor control de tu dinero.
+                Con ella podrás administrar de manera eficiente y reducir tus riesgos de pérdidas.
+                Mejora tu calidad de vida, usa esta app.
+            </p>
+            <p>Comparte la app, eso ayudará a otros a mejorar su administración de dinero.</p>
+            <p>Copia este enlace https://micontroldegastos.com, da click en el título de la app para copiarlo. Comparte el enlace en tus redes para ayudar a otros a mejorar su economía.</p>
+        </article>
+        <article id="Guide">
+            <h2>Guía</h2>
+            <h3>Efectivo</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia1.png" alt="Efectivo"></div>
+            <p>Ingresa la cantidad del dinero en efectivo que quieres administrar.</p>
+            <h3>Total</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia14.png" alt="Total"></div>
+            <p>Observa la cantidad total de dinero que tienes. El total del dinero es calculado con el Efectivo mas el total de dinero en tarjetas de débito.</p>
+            <h3>Dinero restante</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia15.png" alt="Dinero restante"></div>
+            <p>El restante es la cantidad que te queda para gastar hasta el siguiente pago. Este dinero lo puedes gastar libremente. El dinero restante se calcula con el total de dinero menos los gastos en tu lista menos el presupuesto semanal.</p>
+            <h3>Gasto seguro de hoy</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia16.png" alt="Apartado de gasto seguro"></div>
+            <p>En este apartado puedes ver la cantidad de dinero que puedes gastar el día de hoy. Se calcula con el dinero restante entre los días restantes para la quincena.</p>
+            <h3>Secciones</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia2.png" alt="Direfentes secciones"></div>
+            <p>Da click en la sección para editar su contenido.</p>
+            <h3>El total de cada sección</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia3.png" alt="Total de cada sección"></div>
+            <p>En cada sección puedes ver el total del dinero que almacena la lista.</p>
+            <h3>Elementos en lista</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia4.png" alt="Elemento de lista"></div>
+            <p>Cada sección contiene elementos para su respectiva función. Puedes añadir, editar y eliminar estos elementos.</p>
+            <h3>Gasto semanal</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia5.png" alt="Sección de gasto semanal"></div>
+            <p>En esta sección puedes admnistrar la cantidad de gastos designados para cada día de la semana.</p>
+            <h3>Gastos</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia6.png" alt="Sección de gastos"></div> 
+            <p>En esta sección puedes crear una lista con gastos que harás. Así recordaras tus gastos pendientes y cuanto dinero debes designar a cada uno y en total.</p>
+            <h3>Tarjetas de débito</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia7.png" alt="Sección de tarjetas de débito"></div>
+            <p>En esta sección puedes crear una lista de tarjetas de débito, para añadirlas a tu presupuesto total. Solo que cuando hagas un pago con la tarjeta no se va a ver reflejado, puesto que la Aplicación no accede en ningún momento a tus datos personales.</p>
+            <h3>Deudas</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia8.png" alt="Sección de deudas"></div>
+            <p>En esta sección puedes añadir las deudas que tengas pendiente por pagar. Esta sección no va a afectar tu presupuesto total.</p>
+            <h3>Deudores (personas que te deben dinero)</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia9.png" alt="Sección de deudores"></div>
+            <p>Aquí puedes anotar las personas que te deben dinero, así como la cantidad que te deben.</p>
+            <h3>Pendientes</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia10.png" alt="Sección de pendientes"></div>
+            <p>En esta sección puedes crear una lista de pendientes con la respectiva cantidad del dinero designado a ese gasto. Esta lista no afectará el total, por que es para futuro.</p>
+            <h3>Día de pago</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia11.png" alt="Sección de días de pago"></div>
+            <p>Aquí puedes ver los días restantes para la siguiente quincena. De esta manera se calcula el dinero que puedes gastar diariamente. Funciona de tal manera que toma como el día de pago el día 15 y el último día del mes.</p>
+            <p>Is build thinking on payment day as each fortnight.</p>
+            <h3>Sección de información (About) </h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia12.png" alt="Botón de información"></div>
+            <p>Puedes navegar entre la sección de información y la aplicacón dando click en este botón.</p>
+            <h3>Pantalla principal de la aplicación</h3>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia13.png" alt="Botón de la aplicación"></div>
+            <p>Puedes regresar a la pantalla principal de la aplicación dando click en este botón.</p>
+            <h3>Errores</h3>
+            <p>Es posible que al actualizar la versión de la aplicación, esta versión parezca estar en conflicto. Esto se debe al caché de la página.</p>
+            <p>Este error se soluciona limpiando el caché y recargando la página.</p>
+            <p>Es algo sencillo en realidad, solo sigue estos 2 simples pasos.</p>
+            <p>1._ Presiona f12, o da click derecho y click en "inspeccionar" para abrir la ventana de inspeccionar en el navegador.</p>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia17.png" alt="Abrir la barra de inspeccionar"></div>
+            <p>2._ Ahora da click derecho en el botón de recargar, a la derecha de la barra de búsqueda. Da click en <b>Vaciar caché y volver a cargar de manera forzada</b>.</p>
+            <div class="ContenedorImagenAbout"><img src="./Imagenes/Guia/guia18.png" alt="Recargar caché"></div>
+            <p>Si algún error persiste, no dudes en contactarme.</p>
+        </article>
+        <article id="AboutUs">
+            <h2>Sobre mi</h2>
+            <p>Hola! Soy Raúl Acosta. Soy un desarrollador web especializado en el desarrollo Front End.</p>
+            <p>Esta página está completamente desarrollada en el marco del Front End.</p>
+            <p>Espero que puedas obtener un gran beneficio usando esta aplicación.</p>
+            <p>Puedes visitar mis otras aplicaciones y páginas dando click en el siguiente enlace. <a target="_blank" href="https://raulacosta95.github.io/PortafolioWeb/">Web Portfolio</a></p>
+            <p>Si te sientes generoso, y es justo y bueno que lo hagas, puedes contribuír compartiendo esta aplicación, o donando a mi cuenta de paypal. Eso me ayudará a continuar desarrollando y traer nuevos y mejores productos. Te lo agradezco mucho! <a target="_blank" href="https://raulacosta95.github.io/helpMeToGrow/">helpMeToGrow</a></p>
+            <p>Por favor visita mi página de facebook.  <a target="_blank" href="https://www.facebook.com/everypixelmexico/"> everypixelmexico</a></p>
+            <div class="ContenedorImagenAbout"> <img src="./Imagenes/EveryPixelLogo.png" alt="Every Pixel Logo"></div>
+            <p>Gracias especiales a Ariel Terrones Gonzales que me ayudó con el logo de esta aplicación.</p>
+           <p>
+               Iconos diseñados por <a target="_blank" href="https://www.freepik.com" title="Freepik">Freepik</a> from <a target="_blank" href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es </a>
+           </p>
+        </article>
+    </section>
+    <!-- Botones Fijos -->
+    <section id="BotonesFijos">
+        <article title="Ir a la página de información">
+            <button id="BotonAbout" onclick="_aboutApp(); reproducirClick();"><img src="./Imagenes/about.png" alt="Botón de información"></button>
+        </article>
+        <article title="Ir a la aplicación">
+            <button id="BotonHome" onclick="_homeApp(); reproducirClick();"><img src="./Imagenes/Iconos/maskable_icon.png" alt="Botón de ir a la App"></button>
+        </article>
+    </section>
+    <div class="publicidad" id="publicidad1" style="display: none;">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '0b7c58843d0cb806c7114baf5a3ea8f7',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://protectorincorporatehush.com/0b7c58843d0cb806c7114baf5a3ea8f7/invoke.js"></scr' + 'ipt>');
+        </script>
+    </div>
+    <div class="publicidad" id="publicidad2" style="display: none;">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '4bd155168b58ab886435f6d3011f3a50',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://protectorincorporatehush.com/4bd155168b58ab886435f6d3011f3a50/invoke.js"></scr' + 'ipt>');
+        </script>
+    </div>
+    <div class="publicidad" id="publicidad3" style="display: none;">
+        <a target="_blank" href="https://protectorincorporatehush.com/irhjc5u0vz?key=f8e4b952e3de3fbb0025cb85c171bf5d">Publicidad</a>
+    </div>
+    <div class="publicidad" id="publicidad4" style="display: none;">
+        <a target="_blank" href="https://www.videosprofitnetwork.com/watch.xml?key=d4cb2fed696acc50aca1e99ef3ae30e8">Publicidad</a>
+    </div>
+    <div class="publicidad" id="publicidad5" style="display: none;">
+        <script async="async" data-cfasync="false" src="//protectorincorporatehush.com/915cff423b7011557d43151a9844db00/invoke.js"></script>
+        <div id="container-915cff423b7011557d43151a9844db00"></div>
+    </div>
+    <footer></footer>
+    <!-- Scripts Final -->
+    <script src="./JavaScript/ManejoDePantallas/ManejoDePantallas.js"></script>
+    <script src="./JavaScript/Validaciones/ValidacionCampos.js"></script>
+    <script src="./JavaScript/MovimientosDinero/MovimientosDinero.js"></script>
+    <script src="./JavaScript/Listas/MovimientosListas.js"></script>
+    <script src="./JavaScript/Audio/ReproducirAudio.js"></script>
+    <script src="./JavaScript/RandomPublicidad.js"></script>
+
+</body>
+</html>
