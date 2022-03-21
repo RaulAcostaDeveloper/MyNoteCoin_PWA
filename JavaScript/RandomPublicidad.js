@@ -1,6 +1,6 @@
 ponerPublicidad();
 function ponerPublicidad() {
-    let numeroRandom = Math.random() * (5 - 1) + 1;
+    let numeroRandom = Math.random() * (3 - 1) + 1;
     numeroRandom = Number(numeroRandom.toFixed(0));
     console.log('Poner publicidad ' + numeroRandom);
     switch (numeroRandom) {
@@ -18,16 +18,6 @@ function ponerPublicidad() {
             console.log('publicidad 3');
             let publicidad3 = document.getElementById("publicidad3");
             publicidad3.style.display="flex";
-            break;
-        case 4:
-            console.log('publicidad 4');
-            let publicidad4 = document.getElementById("publicidad4");
-            publicidad4.style.display="flex";
-            break;
-        case 5:
-            console.log('publicidad 5');
-            let publicidad5 = document.getElementById("publicidad5");
-            publicidad5.style.display="flex";
             break;
         default:
             break;

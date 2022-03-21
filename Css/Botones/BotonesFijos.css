@@ -19,6 +19,15 @@
     box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 75%);
     transition: 0.1s;
 }
+#cambiarIdioma{
+    position: fixed;
+    width: 50px;
+    top: 10px;
+}
+#cambiarIdioma img{
+    width: 100%;
+}
+
 /* Posición */
 /* #BotonAbout{
     right: 10px;
@@ -29,6 +38,9 @@
     bottom: 10px;
 } */
 @media screen and (min-width: 768px){
+    #cambiarIdioma{
+        width: 100px;
+    }
     #BotonAbout, #BotonHome{
         width: 60px;
         height: 60px;

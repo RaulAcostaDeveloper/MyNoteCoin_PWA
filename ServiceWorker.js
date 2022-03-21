@@ -24,6 +24,8 @@ const ASSETS = [
     "./Css/Secciones/SeccionesGlobal.css",
     "./Css/ImagenInicioAplicacion.css",
 
+    "./Imagenes/espaniol.png",
+    "./Imagenes/ingles.png",
     "./Imagenes/about.png",
     "./Imagenes/editar-documento.png",
     "./Imagenes/Eliminar.png",
