@@ -23,6 +23,10 @@ a{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    z-index: 1!important;
+}
+.publicidad a,.publicidad iframe{
+    z-index: 1!important;
 }
 .publicidad iframe:hover{
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
