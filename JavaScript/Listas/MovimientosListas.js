@@ -570,7 +570,8 @@ function calculaDiasRestantesParaQuincena(){
         diasRestantesQuincena = 15 - diaDelMesActual;
     } else if(diaDelMesActual > 15){
         diasRestantesQuincena = ultimoDiaMes - diaDelMesActual;
-    } else if(diaDelMesActual == 15){
+    } 
+    if(diaDelMesActual == 15){
         diasRestantesQuincena = 15;
     } else if(diaDelMesActual == ultimoDiaMes) {
         diasRestantesQuincena = 15;
